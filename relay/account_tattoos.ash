@@ -50,19 +50,34 @@ buffer render_row(tattoo tattoo, boolean include_type) {
   return row;
 }
 
+buffer render_bluebox(string title, buffer content) {
+  buffer bluebox;
+
+  bluebox.append("<table width=95% cellspacing=0 cellpadding=0>");
+  bluebox.append("<tr><td style=\"color: white;\" align=center bgcolor=blue><b>");
+  bluebox.append(title);
+  bluebox.append("</b></td></tr>");
+  bluebox.append("<tr><td style=\"padding: 5px; border: 1px solid blue;\">");
+  bluebox.append(content);
+  bluebox.append("</td></tr>");
+  bluebox.append("</tr><tr><td height=4></td></tr>");
+  bluebox.append("</table>");
+
+  return bluebox;
+}
+
 buffer render_table(tattoo[string] tattoos) {
   buffer table;
 
-  table.append("<table width=\"95%\" cellspacing=\"0\" cellpadding=\"0\">");
-  table.append("<td style=\"color: white;\" align=center bgcolor=blue colspan=2><b>Tattoos</b></td></tr>");
+  table.append("<center><table>");
 
   foreach image in tattoos {
     table.append(render_row(tattoos[image], true));
   }
 
-  table.append("</table>");
+  table.append("</table></center");
 
-  return table;
+  return render_bluebox("Tattoos", table);
 }
 
 buffer render_content(tattoo current, tattoo[string] tattoos) {
