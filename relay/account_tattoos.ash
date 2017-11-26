@@ -1,5 +1,5 @@
 string CURRENT_AFTER = "\.gif\" width=50 height=50><p>These are the tattoos you have unlocked:";
-string CURRENT_BEFORE = "Current Tattoo:<p><img src=\"/images/otherimages/sigils/";
+string CURRENT_BEFORE = "Current Tattoo:<p><img src=\"https://s3.amazonaws.com/images.kingdomofloathing.com/otherimages/sigils/";
 string IMAGE_ROOT = "/images/otherimages/sigils/";
 string TATTOO_REGEX = "<input type=radio name=newsigil value=\"(\\w+)\">";
 string WIKI_ROOT = "http://kol.coldfront.net/thekolwiki/index.php";
@@ -50,6 +50,16 @@ buffer render_row(tattoo tattoo, boolean include_type) {
   return row;
 }
 
+buffer render_tattoo(tattoo tattoo) {
+  buffer table;
+
+  table.append("<table>");
+  table.append(render_row(tattoo, false));
+  table.append("</table>");
+
+  return table;
+}
+
 buffer render_bluebox(string title, buffer content) {
   buffer bluebox;
 
@@ -57,13 +67,17 @@ buffer render_bluebox(string title, buffer content) {
   bluebox.append("<tr><td style=\"color: white;\" align=center bgcolor=blue><b>");
   bluebox.append(title);
   bluebox.append("</b></td></tr>");
-  bluebox.append("<tr><td style=\"padding: 5px; border: 1px solid blue;\">");
+  bluebox.append("<tr><td style=\"padding: 5px; border: 1px solid blue;\"><center>");
   bluebox.append(content);
-  bluebox.append("</td></tr>");
+  bluebox.append("</center></td></tr>");
   bluebox.append("</tr><tr><td height=4></td></tr>");
   bluebox.append("</table>");
 
   return bluebox;
+}
+
+buffer render_current_tattoo(tattoo current) {
+  return render_bluebox("Current Tattoo", render_tattoo(current));
 }
 
 buffer render_table(tattoo[string] tattoos) {
@@ -84,6 +98,7 @@ buffer render_content(tattoo current, tattoo[string] tattoos) {
   buffer content;
 
   content.append("<center>");
+  content.append(render_current_tattoo(current));
   content.append(render_table(tattoos));
   content.append("</center>");
 
@@ -131,11 +146,11 @@ tattoo lookup_tattoo(string image) {
 }
 
 tattoo find_current_tattoo(buffer source) {
-  int start = source.index_of(CURRENT_BEFORE) + CURRENT_BEFORE.length();
-  int end = source.index_of(CURRENT_AFTER);
+  int before = source.index_of(CURRENT_BEFORE);
+  int after = source.index_of(CURRENT_AFTER);
 
-  if (start > -1 && end > -1) {
-    return lookup_tattoo(source.substring(start, end));
+  if (before > -1 && after > -1) {
+    return lookup_tattoo(source.substring(before + CURRENT_BEFORE.length(), after));
   }
 
   // Can't happen?  Even newly-created characters have a tattoo selected.
