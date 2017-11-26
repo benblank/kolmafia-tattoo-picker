@@ -5,14 +5,17 @@ string TATTOO_REGEX = "<input type=radio name=newsigil value=\"(\\w+)\">";
 string WIKI_ROOT = "http://kol.coldfront.net/thekolwiki/index.php";
 string WIKI_SEARCH = "?title=Special:Search&go=Go&search=";
 
-string[6] TATTOO_TYPES;
+boolean[string] TATTOO_TYPES;    // For inclusion testing.
+string[6] TATTOO_TYPES_ORDERED;  // For iteration order.
 
-TATTOO_TYPES[0] = "Unknown";
-TATTOO_TYPES[1] = "Custom";
-TATTOO_TYPES[2] = "Other";
-TATTOO_TYPES[3] = "Ascension";
-TATTOO_TYPES[4] = "Item";
-TATTOO_TYPES[5] = "Outfit";
+TATTOO_TYPES_ORDERED[0] = "Unknown";
+TATTOO_TYPES_ORDERED[1] = "Custom";
+TATTOO_TYPES_ORDERED[2] = "Other";
+TATTOO_TYPES_ORDERED[3] = "Item";
+TATTOO_TYPES_ORDERED[4] = "Ascension";
+TATTOO_TYPES_ORDERED[5] = "Outfit";
+
+foreach index in TATTOO_TYPES_ORDERED TATTOO_TYPES[TATTOO_TYPES_ORDERED[index]] = true;
 
 record tattoo {
   string image;
@@ -80,6 +83,36 @@ buffer render_current_tattoo(tattoo current) {
   return render_bluebox("Current Tattoo", render_tattoo(current));
 }
 
+buffer render_section(string type, tattoo[string] tattoos) {
+  buffer section;
+
+  foreach image in tattoos {
+    // Only check for invalid types once (when the first section is rendered).
+    if (type == "Unknown" && !(TATTOO_TYPES contains tattoos[image].type)) {
+      // TODO: Handle inavlid type.
+    } else if (type == tattoos[image].type) {
+      section.append(render_tattoo(tattoos[image]));
+    }
+  }
+
+  if (section.length() == 0) {
+    // Empty buffer; no contents, no bluebox.
+    return section;
+  }
+
+  return render_bluebox(type + " Tattoos", section);
+}
+
+buffer render_sections(tattoo[string] tattoos) {
+  buffer sections;
+
+  foreach index in TATTOO_TYPES_ORDERED {
+    sections.append(render_section(TATTOO_TYPES_ORDERED[index], tattoos));
+  }
+
+  return sections;
+}
+
 buffer render_table(tattoo[string] tattoos) {
   buffer table;
 
@@ -99,7 +132,7 @@ buffer render_content(tattoo current, tattoo[string] tattoos) {
 
   content.append("<center>");
   content.append(render_current_tattoo(current));
-  content.append(render_table(tattoos));
+  content.append(render_sections(tattoos));
   content.append("</center>");
 
   return content;
