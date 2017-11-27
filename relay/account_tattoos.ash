@@ -78,6 +78,8 @@ buffer render_tattoo(tattoo tattoo, boolean button) {
   table.append(tattoo.sigil);
   table.append(".gif\" alt=\"");
   table.append(tattoo.sigil);
+  table.append("\" title=\"");
+  table.append(tattoo.sigil);
   table.append("\"></td><td><a target=\"_blank\" href=\"");
   table.append(WIKI_ROOT);
   table.append("/");
