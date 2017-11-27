@@ -123,13 +123,24 @@ buffer render_current_tattoo(tattoo current) {
 
 buffer render_section(string type, tattoo[string] tattoos) {
   buffer section;
+  int i = 0;
 
   foreach image in tattoos {
     // Only check for invalid types once (when the first section is rendered).
     if (type == "Unknown" && !(TATTOO_TYPES contains tattoos[image].type)) {
       // TODO: Handle inavlid type.
     } else if (type == tattoos[image].type) {
+      if (i % 3 == 0) {
+        section.append("<tr>");
+      }
+
+      section.append("<td>");
       section.append(render_tattoo(tattoos[image], true));
+      section.append("</td>");
+
+      if (i++ % 3 == 2) {
+        section.append("</tr>");
+      }
     }
   }
 
@@ -137,6 +148,9 @@ buffer render_section(string type, tattoo[string] tattoos) {
     // Empty buffer; no contents, no bluebox.
     return section;
   }
+
+  section.insert(0, "<table width=100%>");
+  section.append("</table>");
 
   return render_bluebox(type + " Tattoos", section);
 }
