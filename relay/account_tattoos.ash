@@ -195,6 +195,17 @@ tattoo find_current_tattoo(buffer source) {
 
 tattoo[string] find_all_tattoos(buffer source) {
   tattoo[string] tattoos;
+
+  if (form_fields() contains "debug") {
+    // HACK: This function doesn't return a buffer, so write directly to the
+    // page (occurs before proper page content is written).
+    write("<p>Debug Mode active (" + KNOWN_TATTOOS.count() + " known tattoos)</p>");
+
+    foreach image in KNOWN_TATTOOS {
+      tattoos[image] = lookup_tattoo(image);
+    }
+  }
+
   string[int][int] matches = group_string(source, TATTOO_REGEX);
 
   foreach match in matches {
