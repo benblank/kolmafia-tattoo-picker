@@ -1,6 +1,7 @@
 string CURRENT_AFTER = "\.gif\" width=50 height=50><p>These are the tattoos you have unlocked:";
 string CURRENT_BEFORE = "Current Tattoo:<p><img src=\"https://s3.amazonaws.com/images.kingdomofloathing.com/otherimages/sigils/";
 string IMAGE_ROOT = "/images/otherimages/sigils/";
+string PWD_PATTERN = "<input type=hidden name=pwd value='(\\w+)'>";
 string TATTOO_REGEX = "<input type=radio name=newsigil value=\"(\\w+)\">";
 string WIKI_ROOT = "http://kol.coldfront.net/thekolwiki/index.php";
 string WIKI_SEARCH = "?title=Special:Search&go=Go&search=";
@@ -60,11 +61,19 @@ tattoo lookup_tattoo(string image) {
   return new tattoo(image, "Unknown", "Unrecognized tattoo \"" + image + "\"", "File:" + image + ".gif");
 }
 
-buffer render_tattoo(tattoo tattoo) {
+buffer render_tattoo(tattoo tattoo, boolean button) {
   buffer table;
 
   table.append("<table>");
-  table.append("<tr><td><img height=\"50\" width=\"50\" src=\"");
+  table.append("<tr>");
+
+  if (button) {
+    table.append("<td valign=center>");
+    table.append("<button class=\"button tattoo-select\" data-sigil=" + tattoo.image + ">Select</button>");
+    table.append("</td>");
+  }
+
+  table.append("<td><img height=\"50\" width=\"50\" src=\"");
   table.append(IMAGE_ROOT);
   table.append(tattoo.image);
   table.append(".gif\" alt=\"");
@@ -97,8 +106,19 @@ buffer render_bluebox(string title, buffer content) {
   return bluebox;
 }
 
+buffer render_form(string pwd) {
+  buffer form;
+
+  form.append("<form method=post id=tattoo-picker>");
+  form.append("<input type=hidden name=pwd value='" + pwd + "'>");
+  form.append("<input type=hidden name=newsigil id=tattoo-selected>");
+  form.append("</form>");
+
+  return form;
+}
+
 buffer render_current_tattoo(tattoo current) {
-  return render_bluebox("Current Tattoo", render_tattoo(current));
+  return render_bluebox("Current Tattoo", render_tattoo(current, false));
 }
 
 buffer render_section(string type, tattoo[string] tattoos) {
@@ -109,7 +129,7 @@ buffer render_section(string type, tattoo[string] tattoos) {
     if (type == "Unknown" && !(TATTOO_TYPES contains tattoos[image].type)) {
       // TODO: Handle inavlid type.
     } else if (type == tattoos[image].type) {
-      section.append(render_tattoo(tattoos[image]));
+      section.append(render_tattoo(tattoos[image], true));
     }
   }
 
@@ -137,6 +157,14 @@ string get_header(buffer source) {
 
 string get_footer(buffer source) {
   return source.substring(source.last_index_of("</body>"));
+}
+
+string find_pwd(buffer source) {
+  matcher pwd = create_matcher(PWD_PATTERN, source);
+
+  pwd.find();
+
+  return pwd.group(1);
 }
 
 tattoo find_current_tattoo(buffer source) {
@@ -169,9 +197,11 @@ buffer generate_page(buffer source) {
 
   page.append(get_header(source));
   page.append("<center>");
+  page.append(render_form(find_pwd(source)));
   page.append(render_current_tattoo(find_current_tattoo(source)));
   page.append(render_sections(find_all_tattoos(source)));
   page.append("</center>");
+  page.append("<script src=\"tattoo_picker.js\"></script>");
   page.append(get_footer(source));
 
   return page;
