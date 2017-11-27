@@ -1,4 +1,4 @@
-# image image type  label wiki_page
+# sigil sigil type  label wiki_page
 animelftat	animelftat	Outfit	Animelf Apparel	Animelf_Apparel
 aol1	aol1	Other	Air Warriors of Loathing	A._W._O._L._Tattoo
 aol2	aol2	Other	Air Warriors of Loathing	A._W._O._L._Tattoo

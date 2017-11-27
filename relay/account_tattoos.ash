@@ -19,7 +19,7 @@ TATTOO_TYPES_ORDERED[5] = "Outfit";
 foreach index in TATTOO_TYPES_ORDERED TATTOO_TYPES[TATTOO_TYPES_ORDERED[index]] = true;
 
 record tattoo {
-  string image;
+  string sigil;
   string type;
   string label;
   string wiki_page;
@@ -29,36 +29,36 @@ tattoo[string] KNOWN_TATTOOS;
 
 file_to_map("tattoo_picker.txt", KNOWN_TATTOOS);
 
-tattoo lookup_tattoo(string image) {
-  if (KNOWN_TATTOOS contains image) {
-    if (KNOWN_TATTOOS[image].type != "" && KNOWN_TATTOOS[image].label != "" && KNOWN_TATTOOS[image].wiki_page != "") {
-      return KNOWN_TATTOOS[image];
+tattoo lookup_tattoo(string sigil) {
+  if (KNOWN_TATTOOS contains sigil) {
+    if (KNOWN_TATTOOS[sigil].type != "" && KNOWN_TATTOOS[sigil].label != "" && KNOWN_TATTOOS[sigil].wiki_page != "") {
+      return KNOWN_TATTOOS[sigil];
     }
 
-    tattoo copy = new tattoo(image, "Unknown", "Mystery tattoo \"" + image + "\"");
+    tattoo copy = new tattoo(sigil, "Unknown", "Mystery tattoo \"" + sigil + "\"");
 
-    if (KNOWN_TATTOOS[image].wiki_page == "") {
-      if (KNOWN_TATTOOS[image].label == "") {
-        copy.wiki_page = "File:" + image + ".gif";
+    if (KNOWN_TATTOOS[sigil].wiki_page == "") {
+      if (KNOWN_TATTOOS[sigil].label == "") {
+        copy.wiki_page = "File:" + sigil + ".gif";
       } else {
-        copy.wiki_page = WIKI_SEARCH + url_encode(KNOWN_TATTOOS[image].label);
+        copy.wiki_page = WIKI_SEARCH + url_encode(KNOWN_TATTOOS[sigil].label);
       }
     } else {
-      copy.wiki_page = KNOWN_TATTOOS[image].wiki_page;
+      copy.wiki_page = KNOWN_TATTOOS[sigil].wiki_page;
     }
 
-    if (KNOWN_TATTOOS[image].label != "") {
-      copy.label = KNOWN_TATTOOS[image].label;
+    if (KNOWN_TATTOOS[sigil].label != "") {
+      copy.label = KNOWN_TATTOOS[sigil].label;
     }
 
-    if (KNOWN_TATTOOS[image].type != "") {
-      copy.type = KNOWN_TATTOOS[image].type;
+    if (KNOWN_TATTOOS[sigil].type != "") {
+      copy.type = KNOWN_TATTOOS[sigil].type;
     }
 
     return copy;
   }
 
-  return new tattoo(image, "Unknown", "Unrecognized tattoo \"" + image + "\"", "File:" + image + ".gif");
+  return new tattoo(sigil, "Unknown", "Unrecognized tattoo \"" + sigil + "\"", "File:" + sigil + ".gif");
 }
 
 buffer render_tattoo(tattoo tattoo, boolean button) {
@@ -69,15 +69,15 @@ buffer render_tattoo(tattoo tattoo, boolean button) {
 
   if (button) {
     table.append("<td valign=center>");
-    table.append("<button class=\"button tattoo-select\" data-sigil=" + tattoo.image + ">Select</button>");
+    table.append("<button class=\"button tattoo-select\" data-sigil=" + tattoo.sigil + ">Select</button>");
     table.append("</td>");
   }
 
   table.append("<td><img height=\"50\" width=\"50\" src=\"");
   table.append(IMAGE_ROOT);
-  table.append(tattoo.image);
+  table.append(tattoo.sigil);
   table.append(".gif\" alt=\"");
-  table.append(tattoo.image);
+  table.append(tattoo.sigil);
   table.append("\"></td><td><a target=\"_blank\" href=\"");
   table.append(WIKI_ROOT);
   table.append("/");
@@ -125,17 +125,17 @@ buffer render_section(string type, tattoo[string] tattoos) {
   buffer section;
   int i = 0;
 
-  foreach image in tattoos {
+  foreach sigil in tattoos {
     // Only check for invalid types once (when the first section is rendered).
-    if (type == "Unknown" && !(TATTOO_TYPES contains tattoos[image].type)) {
+    if (type == "Unknown" && !(TATTOO_TYPES contains tattoos[sigil].type)) {
       // TODO: Handle inavlid type.
-    } else if (type == tattoos[image].type) {
+    } else if (type == tattoos[sigil].type) {
       if (i % 3 == 0) {
         section.append("<tr>");
       }
 
       section.append("<td>");
-      section.append(render_tattoo(tattoos[image], true));
+      section.append(render_tattoo(tattoos[sigil], true));
       section.append("</td>");
 
       if (i++ % 3 == 2) {
@@ -201,17 +201,17 @@ tattoo[string] find_all_tattoos(buffer source) {
     // page (occurs before proper page content is written).
     write("<p>Debug Mode active (" + KNOWN_TATTOOS.count() + " known tattoos)</p>");
 
-    foreach image in KNOWN_TATTOOS {
-      tattoos[image] = lookup_tattoo(image);
+    foreach sigil in KNOWN_TATTOOS {
+      tattoos[sigil] = lookup_tattoo(sigil);
     }
   }
 
   string[int][int] matches = group_string(source, TATTOO_REGEX);
 
   foreach match in matches {
-    string image = matches[match][1];
+    string sigil = matches[match][1];
 
-    tattoos[image] = lookup_tattoo(image);
+    tattoos[sigil] = lookup_tattoo(sigil);
   }
 
   return tattoos;
