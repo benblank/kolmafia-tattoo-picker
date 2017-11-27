@@ -92,12 +92,31 @@ buffer render_tattoo(tattoo tattoo, boolean button) {
   return table;
 }
 
-buffer render_bluebox(string title, buffer content) {
+buffer render_bluebox(string title, buffer content, boolean collapsible) {
   buffer bluebox;
 
-  bluebox.append("<table width=95% cellspacing=0 cellpadding=0>");
-  bluebox.append("<tr><td style=\"color: white;\" align=center bgcolor=blue><b>");
-  bluebox.append(title);
+  bluebox.append("<table");
+
+  if (collapsible) {
+    bluebox.append(" class=bluebox-collapsible");
+  }
+
+  bluebox.append(" width=95% cellspacing=0 cellpadding=0>");
+  bluebox.append("<tr><td style=\"color: white;");
+
+  if (collapsible) {
+    bluebox.append(" cursor: pointer;");
+  }
+
+  bluebox.append("\" align=center bgcolor=blue><b>");
+  bluebox.append(title + ":");
+
+  if (collapsible) {
+    bluebox.append(" <span style=\"display: none; font-size: .8em; padding-left: 1em;\">");
+    bluebox.append("(click to open)");
+    bluebox.append("</span>");
+  }
+
   bluebox.append("</b></td></tr>");
   bluebox.append("<tr><td style=\"padding: 5px; border: 1px solid blue;\"><center>");
   bluebox.append(content);
@@ -120,7 +139,7 @@ buffer render_form(string pwd) {
 }
 
 buffer render_current_tattoo(tattoo current) {
-  return render_bluebox("Current Tattoo", render_tattoo(current, false));
+  return render_bluebox("Current Tattoo", render_tattoo(current, false), false);
 }
 
 buffer render_section(string type, tattoo[string] tattoos) {
@@ -154,7 +173,7 @@ buffer render_section(string type, tattoo[string] tattoos) {
   section.insert(0, "<table width=100%>");
   section.append("</table>");
 
-  return render_bluebox(type + " Tattoos", section);
+  return render_bluebox(type + " Tattoos", section, true);
 }
 
 buffer render_sections(tattoo[string] tattoos) {
