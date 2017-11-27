@@ -25,34 +25,34 @@ record tattoo {
   string wiki_page;
 };
 
-tattoo[string] TATTOOS;
+tattoo[string] KNOWN_TATTOOS;
 
-file_to_map("tattoo_picker.txt", TATTOOS);
+file_to_map("tattoo_picker.txt", KNOWN_TATTOOS);
 
 tattoo lookup_tattoo(string image) {
-  if (TATTOOS contains image) {
-    if (TATTOOS[image].type != "" && TATTOOS[image].label != "" && TATTOOS[image].wiki_page != "") {
-      return TATTOOS[image];
+  if (KNOWN_TATTOOS contains image) {
+    if (KNOWN_TATTOOS[image].type != "" && KNOWN_TATTOOS[image].label != "" && KNOWN_TATTOOS[image].wiki_page != "") {
+      return KNOWN_TATTOOS[image];
     }
 
     tattoo copy = new tattoo(image, "Unknown", "Mystery tattoo \"" + image + "\"");
 
-    if (TATTOOS[image].wiki_page == "") {
-      if (TATTOOS[image].label == "") {
+    if (KNOWN_TATTOOS[image].wiki_page == "") {
+      if (KNOWN_TATTOOS[image].label == "") {
         copy.wiki_page = "File:" + image + ".gif";
       } else {
-        copy.wiki_page = WIKI_SEARCH + url_encode(TATTOOS[image].label);
+        copy.wiki_page = WIKI_SEARCH + url_encode(KNOWN_TATTOOS[image].label);
       }
     } else {
-      copy.wiki_page = TATTOOS[image].wiki_page;
+      copy.wiki_page = KNOWN_TATTOOS[image].wiki_page;
     }
 
-    if (TATTOOS[image].label != "") {
-      copy.label = TATTOOS[image].label;
+    if (KNOWN_TATTOOS[image].label != "") {
+      copy.label = KNOWN_TATTOOS[image].label;
     }
 
-    if (TATTOOS[image].type != "") {
-      copy.type = TATTOOS[image].type;
+    if (KNOWN_TATTOOS[image].type != "") {
+      copy.type = KNOWN_TATTOOS[image].type;
     }
 
     return copy;
