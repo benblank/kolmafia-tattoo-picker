@@ -28,30 +28,54 @@ tattoo[string] TATTOOS;
 
 file_to_map("tattoo_picker.txt", TATTOOS);
 
-buffer render_row(tattoo tattoo) {
-  buffer row;
+tattoo lookup_tattoo(string image) {
+  if (TATTOOS contains image) {
+    if (TATTOOS[image].type != "" && TATTOOS[image].label != "" && TATTOOS[image].wiki_page != "") {
+      return TATTOOS[image];
+    }
 
-  row.append("<tr><td><img height=\"50\" width=\"50\" src=\"");
-  row.append(IMAGE_ROOT);
-  row.append(tattoo.image);
-  row.append(".gif\" alt=\"");
-  row.append(tattoo.image);
-  row.append("\"></td><td><a target=\"_blank\" href=\"");
-  row.append(WIKI_ROOT);
-  row.append("/");
-  row.append(tattoo.wiki_page);
-  row.append("\">");
-  row.append(tattoo.label);
-  row.append("</a></td></tr>");
+    tattoo copy = new tattoo(image, "Unknown", "Mystery tattoo \"" + image + "\"");
 
-  return row;
+    if (TATTOOS[image].wiki_page == "") {
+      if (TATTOOS[image].label == "") {
+        copy.wiki_page = "File:" + image + ".gif";
+      } else {
+        copy.wiki_page = WIKI_SEARCH + url_encode(TATTOOS[image].label);
+      }
+    } else {
+      copy.wiki_page = TATTOOS[image].wiki_page;
+    }
+
+    if (TATTOOS[image].label != "") {
+      copy.label = TATTOOS[image].label;
+    }
+
+    if (TATTOOS[image].type != "") {
+      copy.type = TATTOOS[image].type;
+    }
+
+    return copy;
+  }
+
+  return new tattoo(image, "Unknown", "Unrecognized tattoo \"" + image + "\"", "File:" + image + ".gif");
 }
 
 buffer render_tattoo(tattoo tattoo) {
   buffer table;
 
   table.append("<table>");
-  table.append(render_row(tattoo));
+  table.append("<tr><td><img height=\"50\" width=\"50\" src=\"");
+  table.append(IMAGE_ROOT);
+  table.append(tattoo.image);
+  table.append(".gif\" alt=\"");
+  table.append(tattoo.image);
+  table.append("\"></td><td><a target=\"_blank\" href=\"");
+  table.append(WIKI_ROOT);
+  table.append("/");
+  table.append(tattoo.wiki_page);
+  table.append("\">");
+  table.append(tattoo.label);
+  table.append("</a></td></tr>");
   table.append("</table>");
 
   return table;
@@ -107,55 +131,12 @@ buffer render_sections(tattoo[string] tattoos) {
   return sections;
 }
 
-buffer render_content(tattoo current, tattoo[string] tattoos) {
-  buffer content;
-
-  content.append("<center>");
-  content.append(render_current_tattoo(current));
-  content.append(render_sections(tattoos));
-  content.append("</center>");
-
-  return content;
-}
-
 string get_header(buffer source) {
   return source.substring(0, source.index_of("<body>") + 6);
 }
 
 string get_footer(buffer source) {
   return source.substring(source.last_index_of("</body>"));
-}
-
-tattoo lookup_tattoo(string image) {
-  if (TATTOOS contains image) {
-    if (TATTOOS[image].type != "" && TATTOOS[image].label != "" && TATTOOS[image].wiki_page != "") {
-      return TATTOOS[image];
-    }
-
-    tattoo copy = new tattoo(image, "Unknown", "Mystery tattoo \"" + image + "\"");
-
-    if (TATTOOS[image].wiki_page == "") {
-      if (TATTOOS[image].label == "") {
-        copy.wiki_page = "File:" + image + ".gif";
-      } else {
-        copy.wiki_page = WIKI_SEARCH + url_encode(TATTOOS[image].label);
-      }
-    } else {
-      copy.wiki_page = TATTOOS[image].wiki_page;
-    }
-
-    if (TATTOOS[image].label != "") {
-      copy.label = TATTOOS[image].label;
-    }
-
-    if (TATTOOS[image].type != "") {
-      copy.type = TATTOOS[image].type;
-    }
-
-    return copy;
-  }
-
-  return new tattoo(image, "Unknown", "Unrecognized tattoo \"" + image + "\"", "File:" + image + ".gif");
 }
 
 tattoo find_current_tattoo(buffer source) {
@@ -187,7 +168,10 @@ buffer generate_page(buffer source) {
   buffer page;
 
   page.append(get_header(source));
-  page.append(render_content(find_current_tattoo(source), find_all_tattoos(source)));
+  page.append("<center>");
+  page.append(render_current_tattoo(find_current_tattoo(source)));
+  page.append(render_sections(find_all_tattoos(source)));
+  page.append("</center>");
   page.append(get_footer(source));
 
   return page;
