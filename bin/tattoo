@@ -1,0 +1,154 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+
+const DATA_FILE = 'data/tattoo_picker.txt';
+const FORBIDDEN_CHARACTERS = '#<>[]|{}';
+const TATTOO_TYPES = ['Unknown', 'Custom', 'Other', 'Item', 'Ascension', 'Outfit'];
+
+function encodeWikiTitle(title) {
+  if (title instanceof Array) {
+    return `${encodeWikiTitle(title[0])}#${encodeWikiTitle(title[1])}`;
+  }
+
+  for (const c of FORBIDDEN_CHARACTERS) {
+    if (title.includes(c)) {
+      console.error(`'${c}' is not allowed in wiki article titles.`);
+      process.exit(1);
+    }
+  }
+
+  return encodeURIComponent(upcaseFirstLetter(title).replace(/ /g, '_'));
+}
+
+function insertRow(file, row) {
+  // We'll be writing back so the same file, so read the entire thing into memory.
+  const input = fs.readFileSync(file, { encoding: 'ascii' });
+  const output = fs.createWriteStream(file, { encoding: 'ascii' });
+  let inserted = false;
+
+  for (const line of input.split('\n')) {
+    // Pass through comments and blank lines.
+    if (line.length == 0 || line[0] === '#') {
+      output.write(line);
+      output.write('\n');
+
+      continue;
+    }
+
+    const sigil = line.split('\t')[0];
+
+    if (sigil === row[0]) {
+      console.log(`Replacing existing row for '${sigil}'.`);
+
+      output.write(row.join('\t'));
+      output.write('\n');
+
+      inserted = true;
+    } else if (!inserted && sigil > row[0]) {
+      console.log(`Inserting '${row[0]}' before '${sigil}'.`);
+
+      output.write(row.join('\t'));
+      output.write('\n');
+      output.write(line);
+      output.write('\n');
+
+      inserted = true;
+    } else {
+      output.write(line);
+      output.write('\n');
+    }
+  }
+
+  if (!inserted) {
+    console.log(`Appending '${row[0]}'.`);
+
+    output.write(row.join('\t'));
+    output.write('\n');
+  }
+}
+
+function processArguments(sigil, type_, ...args) {
+  const type = upcaseFirstLetter(type_);
+  const line = [sigil, sigil, type];
+
+  switch (type) {
+    case 'Unknown':
+      // Unknown tattoos are allowed to specify no additional data, in which case
+      // the relay script will construct defaults.
+      if (args.length) {
+        line.push(args[0]);
+
+        if (args.length > 1) {
+          // Don't require the last "parameter" to be quoted, in case it's convenient.
+          line.push(args.slice(1).join(' '));
+        } else {
+          // If no wiki page is provided, use the title again.  It will be encoded before use.
+          line.push(args[0]);
+        }
+      }
+
+      break;
+
+    case 'Custom':
+      if (args.length < 1) {
+        console.error('Custom tattoos require the user\'s name.');
+        process.exit(1);
+      }
+
+      line.push(`${args.join(' ')}'s Tattoo`, ['Tattoos', 'Custom Tattoos']);
+      break;
+
+    case 'Other':
+    case 'Ascension':
+      // These tattoo types have no reasonable default for the wiki page, so must be fully specified.
+      if (args.length < 2) {
+        console.error(`You must specify both a title and a wiki page for ${type} tattoos.`);
+        process.exit(1);
+      }
+
+      // Don't require the last "parameter" to be quoted, in case it's convenient.
+      line.push(args[0], args.slice(1).join(' '));
+
+      break;
+
+    case 'Item':
+    case 'Outfit':
+      // These tattoo types use their title as the wiki page.
+      if (args.length < 1) {
+        console.error('You must specify a tattoo title.');
+        process.exit(1);
+      }
+
+      // Don't require the last "parameter" to be quoted, in case it's convenient.
+      const title = args.slice(0).join(' ');
+
+      // Include the wiki article title so that it doesn't have to be calculated at runtime.
+      line.push(title, title);
+
+      break;
+
+    default:
+      console.error(`'${type}' is not a recognized tattoo type.  Please use one of: ${TATTOO_TYPES.join(', ')}.`);
+      process.exit(1);
+  }
+
+  return line;
+}
+
+function upcaseFirstLetter(string) {
+  return `${string[0].toUpperCase()}${string.substring(1)}`;
+}
+
+if (process.argv.length < 4) {
+  console.error('This script requires at least two arguments, the tattoo sigil and type.');
+  process.exit(1);
+}
+
+const line = processArguments(...process.argv.slice(2));
+
+if (line[4]) {
+  line[4] = encodeWikiTitle(line[4]);
+}
+
+insertRow(DATA_FILE, line);
