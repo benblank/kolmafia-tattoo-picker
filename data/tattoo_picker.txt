@@ -6,41 +6,43 @@ aol3	aol3	Other	Air Warriors of Loathing	A._W._O._L._Tattoo
 aol4	aol4	Other	Air Warriors of Loathing	A._W._O._L._Tattoo
 aol5	aol5	Other	Air Warriors of Loathing	A._W._O._L._Tattoo
 arbortat	arbortat	Outfit	Arrrbor Day Apparrrrrel	Arrrbor_Day_Apparrrrrel
-arborween	arborween
+arborween	arborween	Outfit	Vestments of the Treeslayer	Vestments_of_the_Treeslayer
 armortat	armortat	Outfit	Antique Arms And Armor	Antique_Arms_And_Armor
-asc01	asc01
-asc02	asc02
-asc03	asc03
-asc04	asc04
-asc05	asc05
-asc06	asc06
-asc07	asc07
-asc08	asc08
-asc09	asc09
-asc1	asc1
-asc10	asc10
-asc11	asc11
-asc12	asc12
-asc2	asc2
-asc3	asc3
-asc4	asc4
-asc5	asc5
-asc6	asc6
-asc7	asc7
-asc8	asc8
-asc9	asc9
-bearclawta	bearclawta
-bearclawtat	bearclawtat
-bknight	bknight
-blacktat	blacktat
-blacktie	blacktie
-bonertat	bonertat
-bosstat	bosstat
-bowtat	bowtat
-brimtat	brimtat
-brogretat	brogretat
-bugbear	bugbear
-bunny	bunny
+asc01	asc01	Ascension	Ascension #1	Ascension
+asc02	asc02	Ascension	Ascension #2	Ascension
+asc03	asc03	Ascension	Ascension #3	Ascension
+asc04	asc04	Ascension	Ascension #4	Ascension
+asc05	asc05	Ascension	Ascension #5	Ascension
+asc06	asc06	Ascension	Ascension #6	Ascension
+asc07	asc07	Ascension	Ascension #7	Ascension
+asc08	asc08	Ascension	Ascension #8	Ascension
+asc09	asc09	Ascension	Ascension #9	Ascension
+asc10	asc10	Ascension	Ascension #10	Ascension
+asc11	asc11	Ascension	Ascension #11	Ascension
+asc12	asc12	Ascension	Ascension #12	Ascension
+# These appear to be old names for the ascension tattoos; I've never seen them live, but the images exist.
+asc1	asc1	Ascension	Ascension #1	Ascension
+asc2	asc2	Ascension	Ascension #2	Ascension
+asc3	asc3	Ascension	Ascension #3	Ascension
+asc4	asc4	Ascension	Ascension #4	Ascension
+asc5	asc5	Ascension	Ascension #5	Ascension
+asc6	asc6	Ascension	Ascension #6	Ascension
+asc7	asc7	Ascension	Ascension #7	Ascension
+asc8	asc8	Ascension	Ascension #8	Ascension
+asc9	asc9	Ascension	Ascension #9	Ascension
+# Apparently had a typo at one point?
+bearclawta	bearclawta	Outfit	Warbear Dress Armor	Warbear_Dress_Armor
+bearclawtat	bearclawtat	Outfit	Warbear Dress Armor	Warbear_Dress_Armor
+bknight	bknight	Outfit	Knight's Armor	Knight%27s_Armor
+blacktat	blacktat	Outfit	Black Armaments	Black_Armaments
+blacktie	blacktie	Outfit	Fancy Tux	Fancy_Tux
+bonertat	bonertat	Custom	Spo's Tattoo	Tattoo#Custom_Tattoos
+bosstat	bosstat	Outfit	Raiments of the Final Boss	Raiments_of_the_Final_Boss
+bowtat	bowtat	Outfit	Bow Tux	Bow_Tux
+brimtat	brimtat	Outfit	Blasphemous Bedizenment	Blasphemous_Bedizenment
+brogretat	brogretat	Outfit	Brogre Brouture	Brogre_Brouture
+bugbear	bugbear	Outfit	Bugbear Costume	Bugbear_Costume
+bunny	bunny	Custom	ZetaReticula's Tattoo	Tattoo#Custom_Tattoos
 canadiatat	canadiatat
 class1	class1
 class11	class11
