@@ -28,7 +28,7 @@ tattoo[string] TATTOOS;
 
 file_to_map("tattoo_picker.txt", TATTOOS);
 
-buffer render_row(tattoo tattoo, boolean include_type) {
+buffer render_row(tattoo tattoo) {
   buffer row;
 
   row.append("<tr><td><img height=\"50\" width=\"50\" src=\"");
@@ -41,12 +41,6 @@ buffer render_row(tattoo tattoo, boolean include_type) {
   row.append("/");
   row.append(tattoo.wiki_page);
   row.append("\">");
-
-  if (include_type) {
-    row.append(tattoo.type);
-    row.append(": ");
-  }
-
   row.append(tattoo.label);
   row.append("</a></td></tr>");
 
@@ -57,7 +51,7 @@ buffer render_tattoo(tattoo tattoo) {
   buffer table;
 
   table.append("<table>");
-  table.append(render_row(tattoo, false));
+  table.append(render_row(tattoo));
   table.append("</table>");
 
   return table;
@@ -111,20 +105,6 @@ buffer render_sections(tattoo[string] tattoos) {
   }
 
   return sections;
-}
-
-buffer render_table(tattoo[string] tattoos) {
-  buffer table;
-
-  table.append("<center><table>");
-
-  foreach image in tattoos {
-    table.append(render_row(tattoos[image], true));
-  }
-
-  table.append("</table></center");
-
-  return render_bluebox("Tattoos", table);
 }
 
 buffer render_content(tattoo current, tattoo[string] tattoos) {
