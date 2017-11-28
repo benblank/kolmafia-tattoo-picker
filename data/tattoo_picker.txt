@@ -59,22 +59,22 @@ class15hc	class15hc	Ascension	Avatar of Sneaky Pete (Hardcore)	Hardcore
 class17	class17	Ascension	Actually Ed the Undying	Actually_Ed_the_Undying
 class17hc	class17hc	Ascension	Actually Ed the Undying (Hardcore)	Hardcore
 class1hc	class1hc	Ascension	Seal Clubber (Hardcore)	Hardcore
-class1hco	class1hco	Ascension	Seal Clubber (HCO)	Oxygenarian
+class1hco	class1hco	Ascension	Seal Clubber (Hardcore Oxygenarian)	Oxygenarian
 class2	class2	Ascension	Turtle Tamer	Turtle_Tamer
 class2hc	class2hc	Ascension	Turtle Tamer (Hardcore)	Hardcore
-class2hco	class2hco	Ascension	Turtle Tamer (HCO)	Oxygenarian
+class2hco	class2hco	Ascension	Turtle Tamer (Hardcore Oxygenarian)	Oxygenarian
 class3	class3	Ascension	Pastamancer	Pastamancer
 class3hc	class3hc	Ascension	Pastamancer (Hardcore)	Hardcore
-class3hco	class3hco	Ascension	Pastamancer (HCO)	Oxygenarian
+class3hco	class3hco	Ascension	Pastamancer (Hardcore Oxygenarian)	Oxygenarian
 class4	class4	Ascension	Sauceror	Sauceror
 class4hc	class4hc	Ascension	Sauceror (Hardcore)	Hardcore
-class4hco	class4hco	Ascension	Sauceror (HCO)	Oxygenarian
+class4hco	class4hco	Ascension	Sauceror (Hardcore Oxygenarian)	Oxygenarian
 class5	class5	Ascension	Disco Bandit	Disco_Bandit
 class5hc	class5hc	Ascension	Disco Bandit (Hardcore)	Hardcore
-class5hco	class5hco	Ascension	Disco Bandit (HCO)	Oxygenarian
+class5hco	class5hco	Ascension	Disco Bandit (Hardcore Oxygenarian)	Oxygenarian
 class6	class6	Ascension	Accordion Thief	Accordion_Thief
 class6hc	class6hc	Ascension	Accordion Thief (Hardcore)	Hardcore
-class6hco	class6hco	Ascension	Accordion Thief (HCO)	Oxygenarian
+class6hco	class6hco	Ascension	Accordion Thief (Hardcore Oxygenarian)	Oxygenarian
 claytat	claytat	Outfit	Hot Daub Ensemble	Hot_Daub_Ensemble
 cliptat	cliptat	Outfit	Paperclippery	Paperclippery
 clocktat	clocktat	Outfit	Clockwork Apparatus	Clockwork_Apparatus
