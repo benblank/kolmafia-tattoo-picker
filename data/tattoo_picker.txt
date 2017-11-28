@@ -122,61 +122,67 @@ fdkoltat	fdkoltat	Item	FDKOL tattoo	FDKOL_tattoo
 foilheart	foilheart	Item	Alice's Army Foil tattoo	Alice's_Army_Foil_tattoo
 fratboy	fratboy	Outfit	Frat Boy Ensemble	Frat_Boy_Ensemble
 gnaugatat	gnaugatat	Outfit	Gnauga Hides	Gnauga_Hides
-halotat	halotat
-haremgirl	haremgirl
-hasc01	hasc01
-hasc02	hasc02
-hasc03	hasc03
-hasc04	hasc04
-hasc05	hasc05
-hasc06	hasc06
-hasc07	hasc07
-hasc08	hasc08
-hasc09	hasc09
-hasc1	hasc1
-hasc10	hasc10
-hasc11	hasc11
-hasc12	hasc12
-hasc2	hasc2
-hasc3	hasc3
-hasc4	hasc4
-hasc5	hasc5
-hasc6	hasc6
-hasc7	hasc7
-hasc8	hasc8
-hasc9	hasc9
-hippy	hippy
-hobotat1	hobotat1
-hobotat10	hobotat10
-hobotat11	hobotat11
-hobotat12	hobotat12
-hobotat13	hobotat13
-hobotat14	hobotat14
-hobotat15	hobotat15
-hobotat16	hobotat16
-hobotat17	hobotat17
-hobotat18	hobotat18
-hobotat19	hobotat19
-hobotat2	hobotat2
-hobotat3	hobotat3
-hobotat4	hobotat4
-hobotat5	hobotat5
-hobotat6	hobotat6
-hobotat7	hobotat7
-hobotat8	hobotat8
-hobotat9	hobotat9
-hodgmantat	hodgmantat
-honeytat	honeytat
-hotghostta	hotghostta
-hotghosttat	hotghosttat
-hothobotat	hothobotat
-hourtat	hourtat
-jfishtat	jfishtat
-lltat	lltat
-loathetat	loathetat
-lollitat	lollitat
-losertat	losertat
-lunartat	lunartat
+halotat	halotat	Outfit	Crimborg Assault Armor	Crimborg_Assault_Armor
+haremgirl	haremgirl	Outfit	Knob Goblin Harem Girl Disguise	Knob_Goblin_Harem_Girl_Disguise
+hasc01	hasc01	Ascension	Hardcore Ascension #1	Hardcore
+hasc02	hasc02	Ascension	Hardcore Ascension #2	Hardcore
+hasc03	hasc03	Ascension	Hardcore Ascension #3	Hardcore
+hasc04	hasc04	Ascension	Hardcore Ascension #4	Hardcore
+hasc05	hasc05	Ascension	Hardcore Ascension #5	Hardcore
+hasc06	hasc06	Ascension	Hardcore Ascension #6	Hardcore
+hasc07	hasc07	Ascension	Hardcore Ascension #7	Hardcore
+hasc08	hasc08	Ascension	Hardcore Ascension #8	Hardcore
+hasc09	hasc09	Ascension	Hardcore Ascension #9	Hardcore
+hasc10	hasc10	Ascension	Hardcore Ascension #10	Hardcore
+hasc11	hasc11	Ascension	Hardcore Ascension #11	Hardcore
+hasc12	hasc12	Ascension	Hardcore Ascension #12	Hardcore
+
+# Like the basic ascension tattoos, there are both zero-padded and non-padded versions of these.
+hasc1	hasc1	Ascension	Hardcore Ascension #1	Hardcore
+hasc2	hasc2	Ascension	Hardcore Ascension #2	Hardcore
+hasc3	hasc3	Ascension	Hardcore Ascension #3	Hardcore
+hasc4	hasc4	Ascension	Hardcore Ascension #4	Hardcore
+hasc5	hasc5	Ascension	Hardcore Ascension #5	Hardcore
+hasc6	hasc6	Ascension	Hardcore Ascension #6	Hardcore
+hasc7	hasc7	Ascension	Hardcore Ascension #7	Hardcore
+hasc8	hasc8	Ascension	Hardcore Ascension #8	Hardcore
+hasc9	hasc9	Ascension	Hardcore Ascension #9	Hardcore
+
+hippy	hippy	Outfit	Filthy Hippy Disguise	Filthy_Hippy_Disguise
+hobotat1	hobotat1	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat10	hobotat10	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat11	hobotat11	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat12	hobotat12	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat13	hobotat13	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat14	hobotat14	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat15	hobotat15	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat16	hobotat16	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat17	hobotat17	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat18	hobotat18	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat19	hobotat19	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat2	hobotat2	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat3	hobotat3	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat4	hobotat4	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat5	hobotat5	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat6	hobotat6	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat7	hobotat7	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat8	hobotat8	Other	Hobo Tattoo	Hobo_Tattoo
+hobotat9	hobotat9	Other	Hobo Tattoo	Hobo_Tattoo
+hodgmantat	hodgmantat	Outfit	Hodgman's Regal Frippery	Hodgman's_Regal_Frippery
+honeytat	honeytat	Outfit	Bits o' Honey	Bits_o'_Honey
+
+# Another fixed typo?
+hotghostta	hotghostta	Outfit	Ghast Iron Gear	Ghast_Iron_Gear
+hotghosttat	hotghosttat	Outfit	Ghast Iron Gear	Ghast_Iron_Gear
+
+hothobotat	hothobotat	Outfit	Pyretic Panhandler Paraphernalia	Pyretic_Panhandler_Paraphernalia
+hourtat	hourtat	Outfit	Time Trappings	Time_Trappings
+jfishtat	jfishtat	Outfit	Encephalic Ensemble	Encephalic_Ensemble
+lltat	lltat	Item	Loathing Legion tattoo needle	Loathing_Legion_tattoo_needle
+loathetat	loathetat	Outfit	Clothing of Loathing	Clothing_of_Loathing
+lollitat	lollitat	Outfit	Sucker Samurai Suit	Sucker_Samurai_Suit
+losertat	losertat	Outfit	Furry Suit	Furry_Suit
+lunartat	lunartat	Outfit	Luniform	Luniform
 margaraxe	margaraxe
 martini	martini
 meattat	meattat
