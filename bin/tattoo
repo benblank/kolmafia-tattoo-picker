@@ -27,7 +27,11 @@ function insertRow(file, row) {
   const output = fs.createWriteStream(file, { encoding: 'ascii' });
   let inserted = false;
 
-  for (const line of input.split('\n')) {
+  // The data file always has a trailing newline, which results in a final
+  // blank line in the input.  If that line were written back out, another
+  // newline would be introduced.  The `slice()` below trims that final blank
+  // line, preventing those additional newlines from being added.
+  for (const line of input.split('\n').slice(0, -1)) {
     // Pass through comments and blank lines.
     if (line.length == 0 || line[0] === '#') {
       output.write(line);
