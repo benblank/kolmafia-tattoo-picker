@@ -91,12 +91,12 @@ function processArguments(sigil, type_, ...args) {
       break;
 
     case 'Custom':
-      if (args.length < 1) {
-        console.error('Custom tattoos require the user\'s name.');
+      if (args.length > 0) {
+        console.error('Custom tattoos don\'t take any parameters.');
         process.exit(1);
       }
 
-      line.push(`${args.join(' ')}'s Tattoo`, ['Tattoos', 'Custom Tattoos']);
+      line.push(`Your custom tattoo!`, ['Tattoos', 'Custom Tattoos']);
       break;
 
     case 'Other':

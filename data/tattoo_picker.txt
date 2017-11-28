@@ -39,13 +39,13 @@ bearclawtat	bearclawtat	Outfit	Warbear Dress Armor	Warbear_Dress_Armor
 bknight	bknight	Outfit	Knight's Armor	Knight%27s_Armor
 blacktat	blacktat	Outfit	Black Armaments	Black_Armaments
 blacktie	blacktie	Outfit	Fancy Tux	Fancy_Tux
-bonertat	bonertat	Custom	Spo's Tattoo	Tattoo#Custom_Tattoos
+bonertat	bonertat	Custom	Your custom tattoo!	Tattoo#Custom_Tattoos
 bosstat	bosstat	Outfit	Raiments of the Final Boss	Raiments_of_the_Final_Boss
 bowtat	bowtat	Outfit	Bow Tux	Bow_Tux
 brimtat	brimtat	Outfit	Blasphemous Bedizenment	Blasphemous_Bedizenment
 brogretat	brogretat	Outfit	Brogre Brouture	Brogre_Brouture
 bugbear	bugbear	Outfit	Bugbear Costume	Bugbear_Costume
-bunny	bunny	Custom	ZetaReticula's Tattoo	Tattoo#Custom_Tattoos
+bunny	bunny	Custom	Your custom tattoo!	Tattoo#Custom_Tattoos
 canadiatat	canadiatat	Outfit	OK Lumberjack Outfit	OK_Lumberjack_Outfit
 class1	class1	Ascension	Seal Clubber	Seal_Clubber
 class11	class11	Ascension	Avatar of Boris	Avatar_of_Boris
@@ -89,8 +89,8 @@ crimbeard	crimbeard	Outfit	Uncle Hobo's Rags	Uncle_Hobo's_Rags
 # The wiki has this file, but nothing links to it.
 crimborgtat	crimborgtat	Unknown
 
-cutter	cutter	Custom	Daisy Cutter's Tattoo	Tattoos#Custom_Tattoos
-daisytat	daisytat	Custom	corneliusv's Tattoo	Tattoos#Custom_Tattoos
+cutter	cutter	Custom	Your custom tattoo!	Tattoos#Custom_Tattoos
+daisytat	daisytat	Custom	Your custom tattoo!	Tattoos#Custom_Tattoos
 datatat	datatat	Item	Corrupted Data	Corrupted_Data
 demontat	demontat	Item	Red-hot medallion	Red-hot_medallion
 dinseytat	dinseytat	Item	Dinsey tattoo kit	Dinsey_tattoo_kit
