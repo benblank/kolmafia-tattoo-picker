@@ -6,17 +6,14 @@ string TATTOO_REGEX = "<input type=radio name=newsigil value=\"(\\w+)\">";
 string WIKI_ROOT = "http://kol.coldfront.net/thekolwiki/index.php";
 string WIKI_SEARCH = "?title=Special:Search&go=Go&search=";
 
-boolean[string] TATTOO_TYPES;    // For inclusion testing.
-string[6] TATTOO_TYPES_ORDERED;  // For iteration order.
-
-TATTOO_TYPES_ORDERED[0] = "Unknown";
-TATTOO_TYPES_ORDERED[1] = "Custom";
-TATTOO_TYPES_ORDERED[2] = "Other";
-TATTOO_TYPES_ORDERED[3] = "Item";
-TATTOO_TYPES_ORDERED[4] = "Ascension";
-TATTOO_TYPES_ORDERED[5] = "Outfit";
-
-foreach index in TATTOO_TYPES_ORDERED TATTOO_TYPES[TATTOO_TYPES_ORDERED[index]] = true;
+boolean[string] TATTOO_TYPES = $strings[
+  Unknown,
+  Custom,
+  Other,
+  Item,
+  Ascension,
+  Outfit,
+];
 
 record tattoo {
   string sigil;
@@ -179,8 +176,8 @@ buffer render_section(string type, tattoo[string] tattoos) {
 buffer render_sections(tattoo[string] tattoos) {
   buffer sections;
 
-  foreach index in TATTOO_TYPES_ORDERED {
-    sections.append(render_section(TATTOO_TYPES_ORDERED[index], tattoos));
+  foreach type in TATTOO_TYPES {
+    sections.append(render_section(type, tattoos));
   }
 
   return sections;
