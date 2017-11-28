@@ -90,38 +90,38 @@ crimbeard	crimbeard	Outfit	Uncle Hobo's Rags	Uncle_Hobo's_Rags
 crimborgtat	crimborgtat	Unknown
 
 cutter	cutter	Custom	Daisy Cutter's Tattoo	Tattoos#Custom_Tattoos
-daisytat	daisytat
-datatat	datatat
-demontat	demontat
-dinseytat	dinseytat
-dnatat	dnatat
-doubicetat	doubicetat
-ducttat	ducttat
-dv_tat1	dv_tat1
-dv_tat2	dv_tat2
-dv_tat3	dv_tat3
-dv_tat4	dv_tat4
-dv_tat5	dv_tat5
-dv_tat6	dv_tat6
-dvinntat	dvinntat
-dvotat1	dvotat1
-dvotat2	dvotat2
-dvotat3	dvotat3
-dvotat4	dvotat4
-dvotat5	dvotat5
-dvotat6	dvotat6
-dvotat7	dvotat7
-dvotat8	dvotat8
-dwarvish	dwarvish
-eggtat	eggtat
-elbereth	elbereth
-eliteguard	eliteguard
-elvtat	elvtat
-emperortat	emperortat
-fdkoltat	fdkoltat
-foilheart	foilheart
-fratboy	fratboy
-gnaugatat	gnaugatat
+daisytat	daisytat	Custom	corneliusv's Tattoo	Tattoos#Custom_Tattoos
+datatat	datatat	Item	Corrupted Data	Corrupted_Data
+demontat	demontat	Item	Red-hot medallion	Red-hot_medallion
+dinseytat	dinseytat	Item	Dinsey tattoo kit	Dinsey_tattoo_kit
+dnatat	dnatat	Outfit	Mutant Couture	Mutant_Couture
+doubicetat	doubicetat	Outfit	Cold Comforts	Cold_Comforts
+ducttat	ducttat	Outfit	Tapered Threads	Tapered_Threads
+dv_tat1	dv_tat1	Item	Mark of the Bugbear	Mark_of_the_Bugbear
+dv_tat2	dv_tat2	Item	Mark of the Werewolf	Mark_of_the_Werewolf
+dv_tat3	dv_tat3	Item	Mark of the Zombie	Mark_of_the_Zombie
+dv_tat4	dv_tat4	Item	Mark of the Ghost	Mark_of_the_Ghost
+dv_tat5	dv_tat5	Item	Mark of the Vampire	Mark_of_the_Vampire
+dv_tat6	dv_tat6	Item	Mark of the Skeleton	Mark_of_the_Skeleton
+dvinntat	dvinntat	Item	Official Seal of Dreadsylvania	Official_Seal_of_Dreadsylvania
+dvotat1	dvotat1	Outfit	Dreadful Pajamas	Dreadful_Pajamas
+dvotat2	dvotat2	Outfit	Dreadful Bugbear Suit	Dreadful_Bugbear_Suit
+dvotat3	dvotat3	Outfit	Dreadful Werewolf Suit	Dreadful_Werewolf_Suit
+dvotat4	dvotat4	Outfit	Dreadful Zombie Suit	Dreadful_Zombie_Suit
+dvotat5	dvotat5	Outfit	Dreadful Ghost Suit	Dreadful_Ghost_Suit
+dvotat6	dvotat6	Outfit	Dreadful Skeleton Suit	Dreadful_Skeleton_Suit
+dvotat7	dvotat7	Outfit	Dreadful Vampire Suit	Dreadful_Vampire_Suit
+dvotat8	dvotat8	Outfit	Cool Irons	Cool_Irons
+dwarvish	dwarvish	Outfit	Dwarvish War Uniform	Dwarvish_War_Uniform
+eggtat	eggtat	Outfit	Grass Guise	Grass_Guise
+elbereth	elbereth	Outfit	Yendorian Finery	Yendorian_Finery
+eliteguard	eliteguard	Outfit	Knob Goblin Elite Guard Uniform	Knob_Goblin_Elite_Guard_Uniform
+elvtat	elvtat	Outfit	El Vibrato Relics	El_Vibrato_Relics
+emperortat	emperortat	Outfit	The Emperor's New Clothes	The_Emperor's_New_Clothes
+fdkoltat	fdkoltat	Item	FDKOL tattoo	FDKOL_tattoo
+foilheart	foilheart	Item	Alice's Army Foil tattoo	Alice's_Army_Foil_tattoo
+fratboy	fratboy	Outfit	Frat Boy Ensemble	Frat_Boy_Ensemble
+gnaugatat	gnaugatat	Outfit	Gnauga Hides	Gnauga_Hides
 halotat	halotat
 haremgirl	haremgirl
 hasc01	hasc01
