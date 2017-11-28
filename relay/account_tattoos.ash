@@ -222,15 +222,20 @@ tattoo find_current_tattoo(buffer source) {
 tattoo[string] find_all_tattoos(buffer source) {
   tattoo[string] tattoos;
 
-  if (form_fields() contains "debug") {
+  boolean debug = form_fields() contains "debug";
+
+  if (debug) {
     // HACK: This function doesn't return a buffer, so write directly to the
-    // page (occurs before proper page content is written).
-    write("<p>Debug Mode active (" + KNOWN_TATTOOS.count() + " known tattoos)</p>");
+    // page (occurs before proper page content is written).  See also similar
+    // lines below.
+    write("<p>Debug Mode active (" + KNOWN_TATTOOS.count() + " known tattoos");
 
     foreach sigil in KNOWN_TATTOOS {
       tattoos[sigil] = lookup_tattoo(sigil);
     }
   }
+
+  int initial_count = tattoos.count();
 
   string[int][int] matches = group_string(source, TATTOO_REGEX);
 
@@ -238,6 +243,14 @@ tattoo[string] find_all_tattoos(buffer source) {
     string sigil = matches[match][1];
 
     tattoos[sigil] = lookup_tattoo(sigil);
+  }
+
+  if (debug) {
+    if (initial_count != tattoos.count()) {
+      write(" + " + (tattoos.count() - initial_count) + " unrecognized tattoos");
+    }
+
+    write(")</p>");
   }
 
   return tattoos;
