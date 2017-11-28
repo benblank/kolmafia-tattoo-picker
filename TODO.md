@@ -3,7 +3,6 @@ This document contains my thoughts on where I'd like to take this script in the 
 ## Almost certain to happen
 
 * filtering — JS needs to be able to parse / reorder tattoo blocks
-* natural sort — Currently sorts ASCIIbetically, which mis-sorts numbers (e.g. "Ascension #10" before "Ascension #2").
 * random tattoo — Should be trivial in JS.
 
 ## Might happen

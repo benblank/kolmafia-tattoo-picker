@@ -1,6 +1,7 @@
 string CURRENT_AFTER = "\.gif\" width=50 height=50><p>These are the tattoos you have unlocked:";
 string CURRENT_BEFORE = "Current Tattoo:<p><img src=\"https://s3.amazonaws.com/images.kingdomofloathing.com/otherimages/sigils/";
 string IMAGE_ROOT = "/images/otherimages/sigils/";
+int NATURAL_KEY_NUMBER_DIGITS = 4;
 string PWD_PATTERN = "<input type=hidden name=pwd value='(\\w+)'>";
 string TATTOO_REGEX = "<input type=radio name=newsigil value=\"(\\w+)\">";
 string WIKI_ROOT = "http://kol.coldfront.net/thekolwiki/index.php";
@@ -56,6 +57,109 @@ tattoo lookup_tattoo(string sigil) {
   }
 
   return new tattoo(sigil, "Unknown", "Unrecognized tattoo \"" + sigil + "\"", "File:" + sigil + ".gif");
+}
+
+void pad_digits(buffer key, int first_digit) {
+  int pad_length = NATURAL_KEY_NUMBER_DIGITS - (key.length() - first_digit);
+
+  if (pad_length > 0) {
+    for _ from 1 to pad_length {
+      key.insert(first_digit, "0");
+    }
+  }
+}
+
+// These are placed here rather than with the other constants because they'll never
+// need updated, so have been grouped with the code which uses them instead.
+boolean[string] ALPHA_CHARACTERS = $strings[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z];
+boolean[string] DIGIT_CHARACTERS = $strings[0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// These characters are removed entirely and therefore are not section delimiters.
+// This gives us e.g. KNIGHTS-ARMAMENTS instead of KNIGHT-S-ARMAMENTS and helps
+// prevent trailing delimiters.
+string IGNORED_CHARACTERS = "[\"')]";
+
+string make_natural_sort_key(string value) {
+  // HACK: This converts values into "natural" keys by assuming numerical sections
+  // never exceed four digits and padding them out to that length.  It's also very
+  // limited in terms of what it recognizes as a number (no signs, commas, etc.).
+
+  // Sanitized string is case-folded (so that casing doesn't affect sort order)
+  // and stripped of unhelpful characters (see comment on IGNORED_CHARACTERS).
+  string sanitized = create_matcher(IGNORED_CHARACTERS, value.to_upper_case()).replace_all("");
+
+  // The beginning of the value acts as a delimiter, so record it as such.
+  string previous_type = "other";
+
+  // This buffer contains the key being built.
+  buffer key;
+
+  // The first recorded digit in the current numeric segment.
+  int first_digit;
+
+  for index from 0 to sanitized.length() - 1 {
+    string character = sanitized.char_at(index);
+
+    // All characters are "other" (and therefore delimiters) unless recognized
+    // as a letter or digit.
+    string type = "other";
+
+    if (ALPHA_CHARACTERS contains character) {
+      type = "alpha";
+    } else if (DIGIT_CHARACTERS contains character) {
+      type = "digit";
+    }
+
+    // When changing segment types, a "pad" action (inserting zeroes at the
+    // beginning of a number), a "dash" action (appending a delimiter), and/or
+    // a "record" action (tracking the initial digit in a numeric segment) may
+    // occur.  Additionally, non-delimiter characters will be written to
+    // the key.  The following table tracks which transitions trigger which
+    // actions.
+    //
+    // alpha -> alpha |     |      |        | write
+    // alpha -> digit |     | dash | record | write
+    // alpha -> other |     | dash |        |
+    // digit -> alpha | pad | dash |        | write
+    // digit -> digit |     |      |        | write
+    // digit -> other | pad | dash |        |
+    // other -> alpha |     |      |        | write
+    // other -> digit |     |      | record | write
+    // other -> other |     |      |        |
+
+    if (previous_type != type) {
+      // This is the "pad" action; only occurs when switching FROM a digit.
+      if (previous_type == "digit") {
+        pad_digits(key, first_digit);
+      }
+
+      // This is the "dash" action; only occurs when switching FROM a non-delimiter.
+      if (previous_type != "other") {
+        key.append("-");
+      }
+
+      // This is the "record" action; only occurs when switching TO a digit.
+      if (type == "digit") {
+        first_digit = key.length();
+      }
+    }
+
+    // Any non-delimiter is written to the key, regardless of current or previous segment type.
+    if (type != "other") {
+      key.append(character);
+    }
+
+    previous_type = type;
+  }
+
+  // If the last segment was numeric, it will not have been padded yet, as
+  // there was no segment transition to handle it, so we have to do that now.
+  if (previous_type == "digit") {
+    pad_digits(key, first_digit);
+  }
+
+  // Finally, convert the key to a string, as sorting on buffers doesn't seem to work.
+  return to_string(key);
 }
 
 buffer render_tattoo(tattoo tattoo, boolean button) {
@@ -180,7 +284,7 @@ buffer render_sections(tattoo[string] tattoos) {
     list[list.count()] = tattoos[sigil];
   }
 
-  sort list by value.label;
+  sort list by make_natural_sort_key(value.label);
 
   buffer sections;
 
