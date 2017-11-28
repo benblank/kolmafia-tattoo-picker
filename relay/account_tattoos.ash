@@ -139,21 +139,21 @@ buffer render_current_tattoo(tattoo current) {
   return render_bluebox("Current Tattoo", render_tattoo(current, false), false);
 }
 
-buffer render_section(string type, tattoo[string] tattoos) {
+buffer render_section(string type, tattoo[int] tattoos) {
   buffer section;
   int i = 0;
 
-  foreach sigil in tattoos {
+  foreach index in tattoos {
     // Only check for invalid types once (when the first section is rendered).
-    if (type == "Unknown" && !(TATTOO_TYPES contains tattoos[sigil].type)) {
+    if (type == "Unknown" && !(TATTOO_TYPES contains tattoos[index].type)) {
       // TODO: Handle inavlid type.
-    } else if (type == tattoos[sigil].type) {
+    } else if (type == tattoos[index].type) {
       if (i % 3 == 0) {
         section.append("<tr>");
       }
 
       section.append("<td>");
-      section.append(render_tattoo(tattoos[sigil], true));
+      section.append(render_tattoo(tattoos[index], true));
       section.append("</td>");
 
       if (i++ % 3 == 2) {
@@ -174,10 +174,18 @@ buffer render_section(string type, tattoo[string] tattoos) {
 }
 
 buffer render_sections(tattoo[string] tattoos) {
+  tattoo[int] list;
+
+  foreach sigil in tattoos {
+    list[list.count()] = tattoos[sigil];
+  }
+
+  sort list by value.label;
+
   buffer sections;
 
   foreach type in TATTOO_TYPES {
-    sections.append(render_section(type, tattoos));
+    sections.append(render_section(type, list));
   }
 
   return sections;
