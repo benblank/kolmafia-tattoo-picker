@@ -1,4 +1,5 @@
 # sigil sigil type  label wiki_page
+aerotat	aerotat	Outfit	Aeroutfit	Aeroutfit
 animelftat	animelftat	Outfit	Animelf Apparel	Animelf_Apparel
 aol1	aol1	Other	Air Warriors of Loathing	A._W._O._L._Tattoo
 aol2	aol2	Other	Air Warriors of Loathing	A._W._O._L._Tattoo
@@ -31,6 +32,9 @@ asc6	asc6	Ascension	Ascension #6	Ascension
 asc7	asc7	Ascension	Ascension #7	Ascension
 asc8	asc8	Ascension	Ascension #8	Ascension
 asc9	asc9	Ascension	Ascension #9	Ascension
+baketat	baketat	Outfit	Bakelite Brigandine	Bakelite_Brigandine
+barreltat	barreltat	Outfit	Cooper's Couture	Cooper's_Couture
+batmantat	batmantat	Item	Battoo kit	Battoo_kit
 
 # Apparently had a typo at one point?
 bearclawta	bearclawta	Outfit	Warbear Dress Armor	Warbear_Dress_Armor
@@ -58,9 +62,17 @@ class15	class15	Ascension	Avatar of Sneaky Pete	Avatar_of_Steaky_Pete
 class15hc	class15hc	Ascension	Avatar of Sneaky Pete (Hardcore)	Hardcore
 class17	class17	Ascension	Actually Ed the Undying	Actually_Ed_the_Undying
 class17hc	class17hc	Ascension	Actually Ed the Undying (Hardcore)	Hardcore
+class18	class18	Ascension	Cow Puncher	Hardcore
+class18hc	class18hc	Ascension	Cow Puncher (Hardcore)	Hardcore
+class19	class19	Ascension	Bean Slinger	Bean_Slinger
+class19hc	class19hc	Ascension	Bean Slinger (Hardcore	Hardcore
 class1hc	class1hc	Ascension	Seal Clubber (Hardcore)	Hardcore
 class1hco	class1hco	Ascension	Seal Clubber (Hardcore Oxygenarian)	Oxygenarian
 class2	class2	Ascension	Turtle Tamer	Turtle_Tamer
+class20	class20	Ascension	Snake Oiler	Snake_Oiler
+class20hc	class20hc	Ascension	Snake Oiler (Hardcore)	Hardcore
+class23	class23	Ascension	Gelatinous Noob	Gelatinous_Noob
+class23hc	class23hc	Ascension	Gelatinous Noob (Hardcore)	Hardcore
 class2hc	class2hc	Ascension	Turtle Tamer (Hardcore)	Hardcore
 class2hco	class2hco	Ascension	Turtle Tamer (Hardcore Oxygenarian)	Oxygenarian
 class3	class3	Ascension	Pastamancer	Pastamancer
@@ -92,7 +104,9 @@ crimborgtat	crimborgtat	Unknown
 cutter	cutter	Custom	Your custom tattoo!	Tattoos#Custom_Tattoos
 daisytat	daisytat	Custom	Your custom tattoo!	Tattoos#Custom_Tattoos
 datatat	datatat	Item	Corrupted Data	Corrupted_Data
+debbietat	debbietat	Item	"DEBBIE" tattoo kit	%22DEBBIE%22_tattoo_kit
 demontat	demontat	Item	Red-hot medallion	Red-hot_medallion
+detbadge	detbadge	Item	Detective tattoo	Detective_tattoo
 dinseytat	dinseytat	Item	Dinsey tattoo kit	Dinsey_tattoo_kit
 dnatat	dnatat	Outfit	Mutant Couture	Mutant_Couture
 doubicetat	doubicetat	Outfit	Cold Comforts	Cold_Comforts
@@ -115,12 +129,19 @@ dvotat8	dvotat8	Outfit	Cool Irons	Cool_Irons
 dwarvish	dwarvish	Outfit	Dwarvish War Uniform	Dwarvish_War_Uniform
 eggtat	eggtat	Outfit	Grass Guise	Grass_Guise
 elbereth	elbereth	Outfit	Yendorian Finery	Yendorian_Finery
+
+# Misspelled sigil.  May be fixed at some point?
+elditchtat	elditchtat	Outfit	Eldritch Equippage	Eldritch_Equippage
+
 eliteguard	eliteguard	Outfit	Knob Goblin Elite Guard Uniform	Knob_Goblin_Elite_Guard_Uniform
 elvtat	elvtat	Outfit	El Vibrato Relics	El_Vibrato_Relics
 emperortat	emperortat	Outfit	The Emperor's New Clothes	The_Emperor's_New_Clothes
+eternaltat	eternaltat	Item	Eternal knot tattoo	Eternal_knot_tattoo
 fdkoltat	fdkoltat	Item	FDKOL tattoo	FDKOL_tattoo
 foilheart	foilheart	Item	Alice's Army Foil tattoo	Alice's_Army_Foil_tattoo
 fratboy	fratboy	Outfit	Frat Boy Ensemble	Frat_Boy_Ensemble
+gingercitytat	gingercitytat	Item	Gingerbread City Midnight in the Industrial Zone	Gingerbread_City_Midnight_in_the_Industrial_Zone
+gingertat	gingertat	Outfit	Gingerbread Best	Gingerbread_Best
 gnaugatat	gnaugatat	Outfit	Gnauga Hides	Gnauga_Hides
 halotat	halotat	Outfit	Crimborg Assault Armor	Crimborg_Assault_Armor
 haremgirl	haremgirl	Outfit	Knob Goblin Harem Girl Disguise	Knob_Goblin_Harem_Girl_Disguise
@@ -178,10 +199,13 @@ hotghosttat	hotghosttat	Outfit	Ghast Iron Gear	Ghast_Iron_Gear
 hothobotat	hothobotat	Outfit	Pyretic Panhandler Paraphernalia	Pyretic_Panhandler_Paraphernalia
 hourtat	hourtat	Outfit	Time Trappings	Time_Trappings
 jfishtat	jfishtat	Outfit	Encephalic Ensemble	Encephalic_Ensemble
+jokestertat	jokestertat	Outfit	The Jokester's Costume	The_Jokester's_Costume
+kgbtat	kgbtat	Item	Golden tattoo gun	Golden_tattoo_gun
 lltat	lltat	Item	Loathing Legion tattoo needle	Loathing_Legion_tattoo_needle
 loathetat	loathetat	Outfit	Clothing of Loathing	Clothing_of_Loathing
 lollitat	lollitat	Outfit	Sucker Samurai Suit	Sucker_Samurai_Suit
 losertat	losertat	Outfit	Furry Suit	Furry_Suit
+ltttat	ltttat	Item	LT&T tattoo kit	LT%26T_tattoo_kit
 lunartat	lunartat	Outfit	Luniform	Luniform
 margaraxe	margaraxe	Item	BGE temporary tattoo	BGE_temporary_tattoo
 martini	martini	Item	Martini	Martini
@@ -190,9 +214,11 @@ merctat	merctat	Item	Merc Core challenge coin	Merc_Core_challenge_coin
 merkgtat	merkgtat	Outfit	Mer-kin Gladfiatorial Gear	Mer-kin_Gladfiatorial_Gear
 merkintat	merkintat	Outfit	Crappy Mer-kin Disguise	Crappy_Mer-kin_Disguise
 merkstat	merkstat	Outfit	Mer-kin Scholar's Vestments	Mer-kin_Scholar's_Vestments
+meteortat	meteortat	Outfit	Meteor Masquerade	Meteor_Masquerade
 miner	miner	Outfit	Miner Gear	Miner_Gear
 minifigtat	minifigtat	Outfit	BRICKOfig Outfit	BRICKOfig_Outfit
 necbrotat	necbrotat	Outfit	Dark Bro's Vestments	Dark_Bro's_Vestments
+newyou	newyou	Other	New-You Club	New-You_Club_Membership_Form#Notes
 ninja	ninja	Outfit	Hot and Cold Running Ninja Suit	Hot_and_Cold_Running_Ninja_Suit
 nobeer	nobeer	Ascension	Teetotaler	Teetotaler
 nofood	nofood	Ascension	Boozetafarian	Boozetafarian
@@ -204,11 +230,14 @@ palette	palette	Other	Pretentious Artist Quest	Pretentious_Artist_Quest
 palmtat	palmtat	Outfit	Palmist Paraphernalia	Palmist_Paraphernalia
 pigirontat	pigirontat	Outfit	Pork Elf Prizes	Pork_Elf_Prizes
 pirate	pirate	Outfit	Swashbuckling Getup	Swashbuckling_Getup
+planetat	planetat	Item	Airplate tattoo	Airplate_tattoo
+platytat	platytat	Custom	Your custom tattoo!	Tattoos#Custom_Tattoos
 plexitat	plexitat	Outfit	Plexiglass Polyhedron Tattoo	Plexiglass_Polyhedron_Tattoo
 polytat	polytat	Outfit	Synthetic Suit	Synthetic_Suit
 porctat	porctat	Outfit	Ceramic Suit	Ceramic_Suit
 potterytat	potterytat	Outfit	Smoked Pottery	Smoked_Pottery
 pressietat	pressietat	Outfit	Crimbo Duds	Crimbo_Duds
+protontat	protontat	Item	Psychokinetic energy blob	Psychokinetic_energy_blob
 rad_tat	rad_tat	Outfit	Pinata Provisions	Pinata_Provisions
 radiotat	radiotat	Outfit	Radio Free Regalia	Radio_Free_Regalia
 radminetat	radminetat	Outfit	High-Radiation Mining Gear	High-Radiation_Mining_Gear
@@ -225,11 +254,15 @@ sailortat	sailortat	Outfit	Seafaring Suit	Seafaring_Suit
 saladtat	saladtat	Item	Delicious Salad	Delicious_Salad
 sbeasttat	sbeasttat	Outfit	Space Beast Furs	Space_Beast_Furs
 sbreaktat	sbreaktat	Item	Spring Break Beach tattoo coupon	Spring_Break_Beach_tattoo_coupon
+sgtat	sgtat	Item	Spacegate Initiative tattoo unit	Spacegate_Initiative_tattoo_unit
 shubtat	shubtat	Outfit	Violent Vestments	Violent_Vestments
 skeletat	skeletat	Outfit	Thousandth Birthday Suit	Thousandth_Birthday_Suit
 slehobotat	slehobotat	Outfit	Tawdry Tramp Togs	Tawdry_Tramp_Togs
 slimetat	slimetat	Outfit	Slimesuit	Slimesuit
+smoochtat	smoochtat	Outfit	SMOOCH Army Uniform	SMOOCH_Army_Uniform
 snowmantat	snowmantat	Outfit	Snowman Suit	Snowman_Suit
+sourcetat	sourcetat	Item	Green pill	Green_pill
+spantat	spantat	Outfit	Spant Armor	Spant_Armor
 spelunktat	spelunktat	Outfit	Spelunker's Gear	Spelunker's_Gear
 spohobotat	spohobotat	Outfit	Dire Drifter Duds	Dire_Drifter_Duds
 spqktat	spqktat	Outfit	Gladiatorial Glad Rags	Gladiatorial_Glad_Rags
@@ -249,13 +282,17 @@ topitat	topitat	Outfit	Topiaria	Topiaria
 toweltat	toweltat	Outfit	Terrycloth Tackle	Terrycloth_Tackle
 toxictat	toxictat	Outfit	Toxic Togs	Toxic_Togs
 tropictat	tropictat	Outfit	Tropical Crimbo Duds	Tropical_Crimbo_Duds
+twitchtat	twitchtat	Item	Twitching Television Tattoo	Twitching_Television_Tattoo
 vol_tat	vol_tat	Outfit	Primitive Radio Duds	Primitive_Radio_Duds
+walmarttat	walmarttat	Item	Wal-Mart tattoo kit	Wal-Mart_tattoo_kit
 warfrattat	warfrattat	Outfit	Frat Warrior Fatigues	Frat_Warrior_Fatigues
 warhiptat	warhiptat	Outfit	War Hippy Fatigues	War_Hippy_Fatigues
 wdbraintat	wdbraintat	Outfit	Dinsey's Exoskeleton	Dinsey's_Exoskeleton
+wickertat	wickertat	Outfit	Wicker Wear	Wicker_Wear
 wintat	wintat	Custom	KoL Con IV Assassin	Tattoos#Custom_Tattoos
 workouttat	workouttat	Outfit	Workoutfit	Workoutfit
 wreathtat	wreathtat	Outfit	Arboreal Raiment	Arboreal_Raiment
+wroughttat	wroughttat	Outfit	Wrought Wrappings	Wrought_Wrappings
 wumpustat	wumpustat	Outfit	Wumpus-Hair Wardrobe	Wumpus-Hair_Wardrobe
 xiblaxtat	xiblaxtat	Outfit	Xiblaxian Stealth Suit	Xiblaxian_Stealth_Suit
 yogtat	yogtat	Outfit	Hateful Habiliment	Hateful_Habiliment

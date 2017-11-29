@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
+const util = require('util');
 
 const DATA_FILE = 'data/tattoo_picker.txt';
 const FORBIDDEN_CHARACTERS = '#<>[]|{}';
 const TATTOO_TYPES = ['Unknown', 'Custom', 'Other', 'Item', 'Ascension', 'Outfit'];
+
+class Abort extends Error {}
 
 function encodeWikiTitle(title) {
   if (title instanceof Array) {
@@ -13,39 +16,44 @@ function encodeWikiTitle(title) {
 
   for (const c of FORBIDDEN_CHARACTERS) {
     if (title.includes(c)) {
-      console.error(`'${c}' is not allowed in wiki article titles.`);
-      process.exit(1);
+      throw new Abort(`'${c}' is not allowed in wiki article titles.`);
     }
   }
 
   return encodeURIComponent(upcaseFirstLetter(title).replace(/ /g, '_'));
 }
 
-function addRow(file, row) {
+async function addRow(file, row) {
   // We'll be writing back so the same file, so read the entire thing into memory.
   const input = fs.readFileSync(file, { encoding: 'ascii' });
 
   if (new RegExp(`^${row[0]}\t`, 'm').test(input)) {
-    console.error(`A row for '${row[0]}' already exists.`);
-    process.exit(1);
+    throw new Abort(`A row for '${row[0]}' already exists.`);
   }
 
-  writeRow(input, fs.createWriteStream(file, { encoding: 'ascii' }), row);
+  const output = fs.createWriteStream(file, { encoding: 'ascii' });
+
+  await writeRow(input, util.promisify(output.write).bind(output), row);
+
+  output.end();
 }
 
-function replaceRow(file, row) {
+async function replaceRow(file, row) {
   // We'll be writing back so the same file, so read the entire thing into memory.
   const input = fs.readFileSync(file, { encoding: 'ascii' });
 
   if (!new RegExp(`^${row[0]}\t`, 'm').test(input)) {
-    console.error(`No existing row for '${row[0]}'.`);
-    process.exit(1);
+    throw new Abort(`No existing row for '${row[0]}'.`);
   }
 
-  writeRow(input, fs.createWriteStream(file, { encoding: 'ascii' }), row);
+  const output = fs.createWriteStream(file, { encoding: 'ascii' });
+
+  await writeRow(input, util.promisify(output.write).bind(output), row);
+
+  output.end();
 }
 
-function writeRow(input, output, row) {
+async function writeRow(input, write, row) {
   let written = false;
 
   // The data file always has a trailing newline, which results in a final
@@ -55,8 +63,8 @@ function writeRow(input, output, row) {
   for (const line of input.split('\n').slice(0, -1)) {
     // Pass through comments and blank lines.
     if (line.length == 0 || line[0] === '#') {
-      output.write(line);
-      output.write('\n');
+      await write(line);
+      await write('\n');
 
       continue;
     }
@@ -66,30 +74,30 @@ function writeRow(input, output, row) {
     if (sigil === row[0]) {
       console.log(`Replacing existing row for '${sigil}'.`);
 
-      output.write(row.join('\t'));
-      output.write('\n');
+      await write(row.join('\t'));
+      await write('\n');
 
       written = true;
     } else if (!written && sigil > row[0]) {
       console.log(`Inserting '${row[0]}' before '${sigil}'.`);
 
-      output.write(row.join('\t'));
-      output.write('\n');
-      output.write(line);
-      output.write('\n');
+      await write(row.join('\t'));
+      await write('\n');
+      await write(line);
+      await write('\n');
 
       written = true;
     } else {
-      output.write(line);
-      output.write('\n');
+      await write(line);
+      await write('\n');
     }
   }
 
   if (!written) {
     console.log(`Appending '${row[0]}'.`);
 
-    output.write(row.join('\t'));
-    output.write('\n');
+    await write(row.join('\t'));
+    await write('\n');
   }
 }
 
@@ -117,8 +125,7 @@ function buildLine(sigil, type_, ...args) {
 
     case 'Custom':
       if (args.length > 0) {
-        console.error('Custom tattoos don\'t take any parameters.');
-        process.exit(1);
+        throw new Abort('Custom tattoos don\'t take any parameters.');
       }
 
       line.push(`Your custom tattoo!`, ['Tattoos', 'Custom Tattoos']);
@@ -128,8 +135,7 @@ function buildLine(sigil, type_, ...args) {
     case 'Ascension':
       // These tattoo types have no reasonable default for the wiki page, so must be fully specified.
       if (args.length < 2) {
-        console.error(`You must specify both a title and a wiki page for ${type} tattoos.`);
-        process.exit(1);
+        throw new Abort(`You must specify both a title and a wiki page for ${type} tattoos.`);
       }
 
       // Don't require the last "parameter" to be quoted, in case it's convenient.
@@ -141,8 +147,7 @@ function buildLine(sigil, type_, ...args) {
     case 'Outfit':
       // These tattoo types use their title as the wiki page.
       if (args.length < 1) {
-        console.error('You must specify a tattoo title.');
-        process.exit(1);
+        throw new Abort('You must specify a tattoo title.');
       }
 
       // Don't require the last "parameter" to be quoted, in case it's convenient.
@@ -154,8 +159,7 @@ function buildLine(sigil, type_, ...args) {
       break;
 
     default:
-      console.error(`'${type}' is not a recognized tattoo type.  Please use one of: ${TATTOO_TYPES.join(', ')}.`);
-      process.exit(1);
+      throw new Abort(`'${type}' is not a recognized tattoo type.  Please use one of: ${TATTOO_TYPES.join(', ')}.`);
   }
 
   return line;
@@ -165,19 +169,43 @@ function upcaseFirstLetter(string) {
   return `${string[0].toUpperCase()}${string.substring(1)}`;
 }
 
-if (process.argv.length < 3) {
-  console.error('You must specify at least the name of the sigil to add or update.');
-  process.exit(1);
-}
+async function main(args) {
+  try {
+    if (args.length < 1) {
+      throw new Abort('You must specify at least the name of the sigil to add or update.');
+    }
 
-if (process.argv.length === 3) {
-  addRow(DATA_FILE, [process.argv[2], process.argv[2]]);
-} else {
-  const line = buildLine(...process.argv.slice(2));
+    if (args[0] === '--bulk') {
+      for (const sigil of args.slice(1)) {
+        try {
+          await addRow(DATA_FILE, [sigil, sigil]);
+        } catch (ex) {
+          if (!(ex instanceof Abort)) {
+            throw ex;
+          }
 
-  if (line[4]) {
-    line[4] = encodeWikiTitle(line[4]);
+          // Ignore aborts.
+        }
+      }
+    } else if (args.length === 1) {
+      await addRow(DATA_FILE, [args[0], args[0]]);
+    } else  {
+      const line = buildLine(...args);
+
+      if (line[4]) {
+        line[4] = encodeWikiTitle(line[4]);
+      }
+
+      await replaceRow(DATA_FILE, line);
+    }
+  } catch (ex) {
+    if (ex instanceof Abort) {
+      console.error(ex.message);
+      process.exit(1);
+    }
+
+    throw ex;
   }
-
-  replaceRow(DATA_FILE, line);
 }
+
+main(process.argv.slice(2));
