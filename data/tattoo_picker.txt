@@ -34,7 +34,7 @@ asc8	asc8	Ascension	Ascension #8	Ascension
 asc9	asc9	Ascension	Ascension #9	Ascension
 baketat	baketat	Outfit	Bakelite Brigandine	Bakelite_Brigandine
 barreltat	barreltat	Outfit	Cooper's Couture	Cooper's_Couture
-batmantat	batmantat	Item	Battoo kit	Battoo_kit
+batmantat	batmantat	Item	battoo kit	Battoo_kit
 
 # Apparently had a typo at one point?
 bearclawta	bearclawta	Outfit	Warbear Dress Armor	Warbear_Dress_Armor
@@ -53,39 +53,39 @@ bunny	bunny	Custom	Your custom tattoo!	Tattoo#Custom_Tattoos
 canadiatat	canadiatat	Outfit	OK Lumberjack Outfit	OK_Lumberjack_Outfit
 class1	class1	Ascension	Seal Clubber	Seal_Clubber
 class11	class11	Ascension	Avatar of Boris	Avatar_of_Boris
-class11hc	class11hc	Ascension	Avatar of Boris (Hardcore)	Hardcore
+class11hc	class11hc	Ascension	Avatar of Boris (Hardcore)	Avatar_of_Boris
 class12	class12	Ascension	Zombie Master	Zombie_Master
-class12hc	class12hc	Ascension	Zombie Master (Hardcore)	Hardcore
+class12hc	class12hc	Ascension	Zombie Master (Hardcore)	Zombie_Master
 class14	class14	Ascension	Avatar of Jarlsberg	Avatar_of_Jarlsberg
-class14hc	class14hc	Ascension	Avatar of Jarlsberg (Hardcore)	Hardcore
-class15	class15	Ascension	Avatar of Sneaky Pete	Avatar_of_Steaky_Pete
-class15hc	class15hc	Ascension	Avatar of Sneaky Pete (Hardcore)	Hardcore
+class14hc	class14hc	Ascension	Avatar of Jarlsberg (Hardcore)	Avatar_of_Jarlsberg
+class15	class15	Ascension	Avatar of Sneaky Pete	Avatar_of_Sneaky_Pete
+class15hc	class15hc	Ascension	Avatar of Sneaky Pete (Hardcore)	Avatar_of_Sneaky_Pete
 class17	class17	Ascension	Actually Ed the Undying	Actually_Ed_the_Undying
-class17hc	class17hc	Ascension	Actually Ed the Undying (Hardcore)	Hardcore
-class18	class18	Ascension	Cow Puncher	Hardcore
-class18hc	class18hc	Ascension	Cow Puncher (Hardcore)	Hardcore
-class19	class19	Ascension	Bean Slinger	Bean_Slinger
-class19hc	class19hc	Ascension	Bean Slinger (Hardcore	Hardcore
-class1hc	class1hc	Ascension	Seal Clubber (Hardcore)	Hardcore
+class17hc	class17hc	Ascension	Actually Ed the Undying (Hardcore)	Actually_Ed_the_Undying
+class18	class18	Ascension	Cow Puncher	Avatar_of_West_of_Loathing
+class18hc	class18hc	Ascension	Cow Puncher (Hardcore)	Avatar_of_West_of_Loathing
+class19	class19	Ascension	Beanslinger	Avatar_of_West_of_Loathing
+class19hc	class19hc	Ascension	Beanslinger (Hardcore)	Avatar_of_West_of_Loathing
+class1hc	class1hc	Ascension	Seal Clubber (Hardcore)	Avatar_of_Boris
 class1hco	class1hco	Ascension	Seal Clubber (Hardcore Oxygenarian)	Oxygenarian
 class2	class2	Ascension	Turtle Tamer	Turtle_Tamer
-class20	class20	Ascension	Snake Oiler	Snake_Oiler
-class20hc	class20hc	Ascension	Snake Oiler (Hardcore)	Hardcore
+class20	class20	Ascension	Snake Oiler	Avatar_of_West_of_Loathing
+class20hc	class20hc	Ascension	Snake Oiler (Hardcore)	Avatar_of_West_of_Loathing
 class23	class23	Ascension	Gelatinous Noob	Gelatinous_Noob
-class23hc	class23hc	Ascension	Gelatinous Noob (Hardcore)	Hardcore
-class2hc	class2hc	Ascension	Turtle Tamer (Hardcore)	Hardcore
+class23hc	class23hc	Ascension	Gelatinous Noob (Hardcore)	Gelatinous_Noob
+class2hc	class2hc	Ascension	Turtle Tamer (Hardcore)	Turtle_Tamer
 class2hco	class2hco	Ascension	Turtle Tamer (Hardcore Oxygenarian)	Oxygenarian
 class3	class3	Ascension	Pastamancer	Pastamancer
-class3hc	class3hc	Ascension	Pastamancer (Hardcore)	Hardcore
+class3hc	class3hc	Ascension	Pastamancer (Hardcore)	Pastamancer
 class3hco	class3hco	Ascension	Pastamancer (Hardcore Oxygenarian)	Oxygenarian
 class4	class4	Ascension	Sauceror	Sauceror
-class4hc	class4hc	Ascension	Sauceror (Hardcore)	Hardcore
+class4hc	class4hc	Ascension	Sauceror (Hardcore)	Sauceror
 class4hco	class4hco	Ascension	Sauceror (Hardcore Oxygenarian)	Oxygenarian
 class5	class5	Ascension	Disco Bandit	Disco_Bandit
-class5hc	class5hc	Ascension	Disco Bandit (Hardcore)	Hardcore
+class5hc	class5hc	Ascension	Disco Bandit (Hardcore)	Disco_Bandit
 class5hco	class5hco	Ascension	Disco Bandit (Hardcore Oxygenarian)	Oxygenarian
 class6	class6	Ascension	Accordion Thief	Accordion_Thief
-class6hc	class6hc	Ascension	Accordion Thief (Hardcore)	Hardcore
+class6hc	class6hc	Ascension	Accordion Thief (Hardcore)	Accordion_Thief
 class6hco	class6hco	Ascension	Accordion Thief (Hardcore Oxygenarian)	Oxygenarian
 claytat	claytat	Outfit	Hot Daub Ensemble	Hot_Daub_Ensemble
 cliptat	cliptat	Outfit	Paperclippery	Paperclippery
@@ -103,10 +103,10 @@ crimborgtat	crimborgtat	Unknown
 
 cutter	cutter	Custom	Your custom tattoo!	Tattoos#Custom_Tattoos
 daisytat	daisytat	Custom	Your custom tattoo!	Tattoos#Custom_Tattoos
-datatat	datatat	Item	Corrupted Data	Corrupted_Data
+datatat	datatat	Item	corrupted data	Corrupted_data
 debbietat	debbietat	Item	"DEBBIE" tattoo kit	%22DEBBIE%22_tattoo_kit
-demontat	demontat	Item	Red-hot medallion	Red-hot_medallion
-detbadge	detbadge	Item	Detective tattoo	Detective_tattoo
+demontat	demontat	Item	red-hot medallion	Red-hot_medallion
+detbadge	detbadge	Item	detective tattoo	Detective_tattoo
 dinseytat	dinseytat	Item	Dinsey tattoo kit	Dinsey_tattoo_kit
 dnatat	dnatat	Outfit	Mutant Couture	Mutant_Couture
 doubicetat	doubicetat	Outfit	Cold Comforts	Cold_Comforts
@@ -131,16 +131,16 @@ eggtat	eggtat	Outfit	Grass Guise	Grass_Guise
 elbereth	elbereth	Outfit	Yendorian Finery	Yendorian_Finery
 
 # Misspelled sigil.  May be fixed at some point?
-elditchtat	elditchtat	Outfit	Eldritch Equippage	Eldritch_Equippage
+elditchtat	elditchtat	Outfit	Eldritch Equipage	Eldritch_Equipage
 
 eliteguard	eliteguard	Outfit	Knob Goblin Elite Guard Uniform	Knob_Goblin_Elite_Guard_Uniform
 elvtat	elvtat	Outfit	El Vibrato Relics	El_Vibrato_Relics
 emperortat	emperortat	Outfit	The Emperor's New Clothes	The_Emperor's_New_Clothes
-eternaltat	eternaltat	Item	Eternal knot tattoo	Eternal_knot_tattoo
+eternaltat	eternaltat	Item	eternal knot tattoo	Eternal_knot_tattoo
 fdkoltat	fdkoltat	Item	FDKOL tattoo	FDKOL_tattoo
 foilheart	foilheart	Item	Alice's Army Foil tattoo	Alice's_Army_Foil_tattoo
 fratboy	fratboy	Outfit	Frat Boy Ensemble	Frat_Boy_Ensemble
-gingercitytat	gingercitytat	Item	Gingerbread City Midnight in the Industrial Zone	Gingerbread_City_Midnight_in_the_Industrial_Zone
+gingercitytat	gingercitytat	Other	Gingerbread City	Midnight_in_the_Industrial_Zone
 gingertat	gingertat	Outfit	Gingerbread Best	Gingerbread_Best
 gnaugatat	gnaugatat	Outfit	Gnauga Hides	Gnauga_Hides
 halotat	halotat	Outfit	Crimborg Assault Armor	Crimborg_Assault_Armor
@@ -200,7 +200,7 @@ hothobotat	hothobotat	Outfit	Pyretic Panhandler Paraphernalia	Pyretic_Panhandler
 hourtat	hourtat	Outfit	Time Trappings	Time_Trappings
 jfishtat	jfishtat	Outfit	Encephalic Ensemble	Encephalic_Ensemble
 jokestertat	jokestertat	Outfit	The Jokester's Costume	The_Jokester's_Costume
-kgbtat	kgbtat	Item	Golden tattoo gun	Golden_tattoo_gun
+kgbtat	kgbtat	Item	golden tattoo gun	Golden_tattoo_gun
 lltat	lltat	Item	Loathing Legion tattoo needle	Loathing_Legion_tattoo_needle
 loathetat	loathetat	Outfit	Clothing of Loathing	Clothing_of_Loathing
 lollitat	lollitat	Outfit	Sucker Samurai Suit	Sucker_Samurai_Suit
@@ -208,14 +208,14 @@ losertat	losertat	Outfit	Furry Suit	Furry_Suit
 ltttat	ltttat	Item	LT&T tattoo kit	LT%26T_tattoo_kit
 lunartat	lunartat	Outfit	Luniform	Luniform
 margaraxe	margaraxe	Item	BGE temporary tattoo	BGE_temporary_tattoo
-martini	martini	Item	Martini	Martini
+martini	martini	Item	martini	Martini
 meattat	meattat	Outfit	Bounty-Hunting Rig	Bounty-Hunting_Rig
 merctat	merctat	Item	Merc Core challenge coin	Merc_Core_challenge_coin
-merkgtat	merkgtat	Outfit	Mer-kin Gladfiatorial Gear	Mer-kin_Gladfiatorial_Gear
+merkgtat	merkgtat	Outfit	Mer-kin Gladiatorial Gear	Mer-kin_Gladiatorial_Gear
 merkintat	merkintat	Outfit	Crappy Mer-kin Disguise	Crappy_Mer-kin_Disguise
 merkstat	merkstat	Outfit	Mer-kin Scholar's Vestments	Mer-kin_Scholar's_Vestments
 meteortat	meteortat	Outfit	Meteor Masquerade	Meteor_Masquerade
-miner	miner	Outfit	Miner Gear	Miner_Gear
+miner	miner	Outfit	Mining Gear	Mining_Gear
 minifigtat	minifigtat	Outfit	BRICKOfig Outfit	BRICKOfig_Outfit
 necbrotat	necbrotat	Outfit	Dark Bro's Vestments	Dark_Bro's_Vestments
 newyou	newyou	Other	New-You Club	New-You_Club_Membership_Form#Notes
@@ -230,20 +230,20 @@ palette	palette	Other	Pretentious Artist Quest	Pretentious_Artist_Quest
 palmtat	palmtat	Outfit	Palmist Paraphernalia	Palmist_Paraphernalia
 pigirontat	pigirontat	Outfit	Pork Elf Prizes	Pork_Elf_Prizes
 pirate	pirate	Outfit	Swashbuckling Getup	Swashbuckling_Getup
-planetat	planetat	Item	Airplate tattoo	Airplate_tattoo
+planetat	planetat	Item	airplane tattoo	Airplane_tattoo
 platytat	platytat	Custom	Your custom tattoo!	Tattoos#Custom_Tattoos
 plexitat	plexitat	Outfit	Plexiglass Polyhedron Tattoo	Plexiglass_Polyhedron_Tattoo
 polytat	polytat	Outfit	Synthetic Suit	Synthetic_Suit
 porctat	porctat	Outfit	Ceramic Suit	Ceramic_Suit
 potterytat	potterytat	Outfit	Smoked Pottery	Smoked_Pottery
 pressietat	pressietat	Outfit	Crimbo Duds	Crimbo_Duds
-protontat	protontat	Item	Psychokinetic energy blob	Psychokinetic_energy_blob
+protontat	protontat	Item	psychokinetic energy blob	Psychokinetic_energy_blob
 rad_tat	rad_tat	Outfit	Pinata Provisions	Pinata_Provisions
 radiotat	radiotat	Outfit	Radio Free Regalia	Radio_Free_Regalia
 radminetat	radminetat	Outfit	High-Radiation Mining Gear	High-Radiation_Mining_Gear
 reapertat	reapertat	Outfit	Grimy Reaper's Vestments	Grimy_Reaper's_Vestments
 recyctat	recyctat	Outfit	Glad Bag Glad Rags	Glad_Bag_Glad_Rags
-revclass1	revclass1	Outfit	Legendary Regalia of the Seal Clubber	Legendary_Regalia_of_the_Seal_Clubber
+revclass1	revclass1	Outfit	Legendary Regalia of the Seal Crusher	Legendary_Regalia_of_the_Seal_Crusher
 revclass2	revclass2	Outfit	Legendary Regalia of the Chelonian Overlord	Legendary_Regalia_of_the_Chelonian_Overlord
 revclass3	revclass3	Outfit	Legendary Regalia of the Pasta Master	Legendary_Regalia_of_the_Pasta_Master
 revclass4	revclass4	Outfit	Legendary Regalia of the Saucemaestro	Legendary_Regalia_of_the_Saucemaestro
@@ -251,7 +251,7 @@ revclass5	revclass5	Outfit	Legendary Regalia of the Groovelord	Legendary_Regalia
 revclass6	revclass6	Outfit	Legendary Regalia of the Master Squeezeboxer	Legendary_Regalia_of_the_Master_Squeezeboxer
 rock_tat	rock_tat	Outfit	Floaty Fatigues	Floaty_Fatigues
 sailortat	sailortat	Outfit	Seafaring Suit	Seafaring_Suit
-saladtat	saladtat	Item	Delicious Salad	Delicious_Salad
+saladtat	saladtat	Item	delicious salad	Delicious_salad
 sbeasttat	sbeasttat	Outfit	Space Beast Furs	Space_Beast_Furs
 sbreaktat	sbreaktat	Item	Spring Break Beach tattoo coupon	Spring_Break_Beach_tattoo_coupon
 sgtat	sgtat	Item	Spacegate Initiative tattoo unit	Spacegate_Initiative_tattoo_unit
@@ -261,7 +261,7 @@ slehobotat	slehobotat	Outfit	Tawdry Tramp Togs	Tawdry_Tramp_Togs
 slimetat	slimetat	Outfit	Slimesuit	Slimesuit
 smoochtat	smoochtat	Outfit	SMOOCH Army Uniform	SMOOCH_Army_Uniform
 snowmantat	snowmantat	Outfit	Snowman Suit	Snowman_Suit
-sourcetat	sourcetat	Item	Green pill	Green_pill
+sourcetat	sourcetat	Item	green pill	Green_pill
 spantat	spantat	Outfit	Spant Armor	Spant_Armor
 spelunktat	spelunktat	Outfit	Spelunker's Gear	Spelunker's_Gear
 spohobotat	spohobotat	Outfit	Dire Drifter Duds	Dire_Drifter_Duds

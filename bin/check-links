@@ -1,0 +1,27 @@
+#!/bin/sh
+
+MAX_TRIES=3
+WIKI_ROOT="http://kol.coldfront.net/thekolwiki/index.php"
+
+pages="$(sed -rn 's/^.+\t([^\t#]+?)(#.+)?$/\1/ p' data/tattoo_picker.txt | sort -u)"
+
+for page in $pages; do
+  tries=1
+  headers="$(curl -Is "$WIKI_ROOT/$page")"
+
+  while [ $? -ne 0 -a $tries -lt $MAX_TRIES ]; do
+    echo "Connection failed.  Retrying in 5 seconds."
+    sleep 5
+    tries="$(($tries + 1))"
+    headers="$(curl -Is "$WIKI_ROOT/$page")"
+  done
+
+  if [ $? -ne 0 ]; then
+    >&2 echo "Could not connect to server after $MAX_TRIES attempts.  Aborting."
+    exit 1
+  fi
+
+  if ! echo "$headers" | grep -E "^HTTP/[0-9]+(\.[0-9]+)* +200\b" > /dev/null; then
+    >&2 echo "Broken link: $page"
+  fi
+done
