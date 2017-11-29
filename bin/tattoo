@@ -21,11 +21,32 @@ function encodeWikiTitle(title) {
   return encodeURIComponent(upcaseFirstLetter(title).replace(/ /g, '_'));
 }
 
-function insertRow(file, row) {
+function addRow(file, row) {
   // We'll be writing back so the same file, so read the entire thing into memory.
   const input = fs.readFileSync(file, { encoding: 'ascii' });
-  const output = fs.createWriteStream(file, { encoding: 'ascii' });
-  let inserted = false;
+
+  if (new RegExp(`^${row[0]}\t`, 'm').test(input)) {
+    console.error(`A row for '${row[0]}' already exists.`);
+    process.exit(1);
+  }
+
+  writeRow(input, fs.createWriteStream(file, { encoding: 'ascii' }), row);
+}
+
+function replaceRow(file, row) {
+  // We'll be writing back so the same file, so read the entire thing into memory.
+  const input = fs.readFileSync(file, { encoding: 'ascii' });
+
+  if (!new RegExp(`^${row[0]}\t`, 'm').test(input)) {
+    console.error(`No existing row for '${row[0]}'.`);
+    process.exit(1);
+  }
+
+  writeRow(input, fs.createWriteStream(file, { encoding: 'ascii' }), row);
+}
+
+function writeRow(input, output, row) {
+  let written = false;
 
   // The data file always has a trailing newline, which results in a final
   // blank line in the input.  If that line were written back out, another
@@ -48,8 +69,8 @@ function insertRow(file, row) {
       output.write(row.join('\t'));
       output.write('\n');
 
-      inserted = true;
-    } else if (!inserted && sigil > row[0]) {
+      written = true;
+    } else if (!written && sigil > row[0]) {
       console.log(`Inserting '${row[0]}' before '${sigil}'.`);
 
       output.write(row.join('\t'));
@@ -57,14 +78,14 @@ function insertRow(file, row) {
       output.write(line);
       output.write('\n');
 
-      inserted = true;
+      written = true;
     } else {
       output.write(line);
       output.write('\n');
     }
   }
 
-  if (!inserted) {
+  if (!written) {
     console.log(`Appending '${row[0]}'.`);
 
     output.write(row.join('\t'));
@@ -72,7 +93,7 @@ function insertRow(file, row) {
   }
 }
 
-function processArguments(sigil, type_, ...args) {
+function buildLine(sigil, type_, ...args) {
   const type = upcaseFirstLetter(type_);
   const line = [sigil, sigil, type];
 
@@ -144,15 +165,19 @@ function upcaseFirstLetter(string) {
   return `${string[0].toUpperCase()}${string.substring(1)}`;
 }
 
-if (process.argv.length < 4) {
-  console.error('This script requires at least two arguments, the tattoo sigil and type.');
+if (process.argv.length < 3) {
+  console.error('You must specify at least the name of the sigil to add or update.');
   process.exit(1);
 }
 
-const line = processArguments(...process.argv.slice(2));
+if (process.argv.length === 3) {
+  addRow(DATA_FILE, [process.argv[2], process.argv[2]]);
+} else {
+  const line = buildLine(...process.argv.slice(2));
 
-if (line[4]) {
-  line[4] = encodeWikiTitle(line[4]);
+  if (line[4]) {
+    line[4] = encodeWikiTitle(line[4]);
+  }
+
+  replaceRow(DATA_FILE, line);
 }
-
-insertRow(DATA_FILE, line);
