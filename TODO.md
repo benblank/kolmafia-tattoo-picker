@@ -5,6 +5,7 @@ This document contains my thoughts on where I'd like to take this script in the 
 * filtering — JS needs to be able to parse / reorder tattoo blocks
 * random tattoo — Should be trivial in JS.
 * add missing tattoos — TheKolWiki has more sigils than show up in [a search for `otherimages/sigils`](http://kol.coldfront.net/thekolwiki/index.php?title=Special:Search&limit=500&offset=0&ns6=1&search=otherimages%2Fsigils), in spite of containing that text (such as [`baketat`](http://kol.coldfront.net/thekolwiki/index.php/File:Baketat.gif).  I don't want to crawl the wiki, but I need as much data as I can get, so I need to figure something out.
+* switch from regexes to xpaths — I didn't realize ASH had an xpath function.  Goodbye, regex "parsing"!
 
 ## Might happen
 
