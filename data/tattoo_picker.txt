@@ -183,44 +183,44 @@ loathetat	loathetat	Outfit	Clothing of Loathing	Clothing_of_Loathing
 lollitat	lollitat	Outfit	Sucker Samurai Suit	Sucker_Samurai_Suit
 losertat	losertat	Outfit	Furry Suit	Furry_Suit
 lunartat	lunartat	Outfit	Luniform	Luniform
-margaraxe	margaraxe
-martini	martini
-meattat	meattat
-merctat	merctat
-merkgtat	merkgtat
-merkintat	merkintat
-merkstat	merkstat
-miner	miner
-minifigtat	minifigtat
-necbrotat	necbrotat
-ninja	ninja
-nobeer	nobeer
-nofood	nofood
-nosealtat	nosealtat
-oiltat	oiltat
-orbisontat	orbisontat
-oxy	oxy
-palette	palette
-palmtat	palmtat
-pigirontat	pigirontat
-pirate	pirate
-plexitat	plexitat
-polytat	polytat
-porctat	porctat
-potterytat	potterytat
-pressietat	pressietat
-rad_tat	rad_tat
-radiotat	radiotat
-radminetat	radminetat
-reapertat	reapertat
-recyctat	recyctat
-revclass1	revclass1
-revclass2	revclass2
-revclass3	revclass3
-revclass4	revclass4
-revclass5	revclass5
-revclass6	revclass6
-rock_tat	rock_tat
+margaraxe	margaraxe	Item	BGE temporary tattoo	BGE_temporary_tattoo
+martini	martini	Item	Martini	Martini
+meattat	meattat	Outfit	Bounty-Hunting Rig	Bounty-Hunting_Rig
+merctat	merctat	Item	Merc Core challenge coin	Merc_Core_challenge_coin
+merkgtat	merkgtat	Outfit	Mer-kin Gladfiatorial Gear	Mer-kin_Gladfiatorial_Gear
+merkintat	merkintat	Outfit	Crappy Mer-kin Disguise	Crappy_Mer-kin_Disguise
+merkstat	merkstat	Outfit	Mer-kin Scholar's Vestments	Mer-kin_Scholar's_Vestments
+miner	miner	Outfit	Miner Gear	Miner_Gear
+minifigtat	minifigtat	Outfit	BRICKOfig Outfit	BRICKOfig_Outfit
+necbrotat	necbrotat	Outfit	Dark Bro's Vestments	Dark_Bro's_Vestments
+ninja	ninja	Outfit	Hot and Cold Running Ninja Suit	Hot_and_Cold_Running_Ninja_Suit
+nobeer	nobeer	Ascension	Teetotaler	Teetotaler
+nofood	nofood	Ascension	Boozetafarian	Boozetafarian
+nosealtat	nosealtat	Outfit	Frigid Northlands Garb	Frigid_Northlands_Garb
+oiltat	oiltat	Outfit	Oil Rig	Oil_Rig
+orbisontat	orbisontat	Outfit	Roy Orbison Disguise	Roy_Orbison_Disguise
+oxy	oxy	Ascension	Oxygenarian	Oxygenarian
+palette	palette	Other	Pretentious Artist Quest	Pretentious_Artist_Quest
+palmtat	palmtat	Outfit	Palmist Paraphernalia	Palmist_Paraphernalia
+pigirontat	pigirontat	Outfit	Pork Elf Prizes	Pork_Elf_Prizes
+pirate	pirate	Outfit	Swashbuckling Getup	Swashbuckling_Getup
+plexitat	plexitat	Outfit	Plexiglass Polyhedron Tattoo	Plexiglass_Polyhedron_Tattoo
+polytat	polytat	Outfit	Synthetic Suit	Synthetic_Suit
+porctat	porctat	Outfit	Ceramic Suit	Ceramic_Suit
+potterytat	potterytat	Outfit	Smoked Pottery	Smoked_Pottery
+pressietat	pressietat	Outfit	Crimbo Duds	Crimbo_Duds
+rad_tat	rad_tat	Outfit	Pinata Provisions	Pinata_Provisions
+radiotat	radiotat	Outfit	Radio Free Regalia	Radio_Free_Regalia
+radminetat	radminetat	Outfit	High-Radiation Mining Gear	High-Radiation_Mining_Gear
+reapertat	reapertat	Outfit	Grimy Reaper's Vestments	Grimy_Reaper's_Vestments
+recyctat	recyctat	Outfit	Glad Bag Glad Rags	Glad_Bag_Glad_Rags
+revclass1	revclass1	Outfit	Legendary Regalia of the Seal Clubber	Legendary_Regalia_of_the_Seal_Clubber
+revclass2	revclass2	Outfit	Legendary Regalia of the Chelonian Overlord	Legendary_Regalia_of_the_Chelonian_Overlord
+revclass3	revclass3	Outfit	Legendary Regalia of the Pasta Master	Legendary_Regalia_of_the_Pasta_Master
+revclass4	revclass4	Outfit	Legendary Regalia of the Saucemaestro	Legendary_Regalia_of_the_Saucemaestro
+revclass5	revclass5	Outfit	Legendary Regalia of the Groovelord	Legendary_Regalia_of_the_Groovelord
+revclass6	revclass6	Outfit	Legendary Regalia of the Master Squeezeboxer	Legendary_Regalia_of_the_Master_Squeezeboxer
+rock_tat	rock_tat	Outfit	Floaty Fatigues	Floaty_Fatigues
 sailortat	sailortat
 saladtat	saladtat
 sbeasttat	sbeasttat
