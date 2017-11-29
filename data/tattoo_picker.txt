@@ -221,43 +221,43 @@ revclass4	revclass4	Outfit	Legendary Regalia of the Saucemaestro	Legendary_Regal
 revclass5	revclass5	Outfit	Legendary Regalia of the Groovelord	Legendary_Regalia_of_the_Groovelord
 revclass6	revclass6	Outfit	Legendary Regalia of the Master Squeezeboxer	Legendary_Regalia_of_the_Master_Squeezeboxer
 rock_tat	rock_tat	Outfit	Floaty Fatigues	Floaty_Fatigues
-sailortat	sailortat
-saladtat	saladtat
-sbeasttat	sbeasttat
-sbreaktat	sbreaktat
-shubtat	shubtat
-skeletat	skeletat
-slehobotat	slehobotat
-slimetat	slimetat
-snowmantat	snowmantat
-spelunktat	spelunktat
-spohobotat	spohobotat
-spqktat	spqktat
-sspd4plunk	sspd4plunk
-sspdfi5if	sspdfi5if
-sspdfipp3	sspdfipp3
-sspdpook2	sspdpook2
-sspdtat1	sspdtat1
-staintat	staintat
-startat	startat
-stehobotat	stehobotat
-swordtat	swordtat
-tehclub	tehclub
-tehclub_f	tehclub_f
-tikidemon	tikidemon
-topitat	topitat
-toweltat	toweltat
-toxictat	toxictat
-tropictat	tropictat
-vol_tat	vol_tat
-warfrattat	warfrattat
-warhiptat	warhiptat
-wdbraintat	wdbraintat
-wintat	wintat
-workouttat	workouttat
-wreathtat	wreathtat
-wumpustat	wumpustat
-xiblaxtat	xiblaxtat
-yogtat	yogtat
-zaptat	zaptat
-zompirtat	zompirtat
+sailortat	sailortat	Outfit	Seafaring Suit	Seafaring_Suit
+saladtat	saladtat	Item	Delicious Salad	Delicious_Salad
+sbeasttat	sbeasttat	Outfit	Space Beast Furs	Space_Beast_Furs
+sbreaktat	sbreaktat	Item	Spring Break Beach tattoo coupon	Spring_Break_Beach_tattoo_coupon
+shubtat	shubtat	Outfit	Violent Vestments	Violent_Vestments
+skeletat	skeletat	Outfit	Thousandth Birthday Suit	Thousandth_Birthday_Suit
+slehobotat	slehobotat	Outfit	Tawdry Tramp Togs	Tawdry_Tramp_Togs
+slimetat	slimetat	Outfit	Slimesuit	Slimesuit
+snowmantat	snowmantat	Outfit	Snowman Suit	Snowman_Suit
+spelunktat	spelunktat	Outfit	Spelunker's Gear	Spelunker's_Gear
+spohobotat	spohobotat	Outfit	Dire Drifter Duds	Dire_Drifter_Duds
+spqktat	spqktat	Outfit	Gladiatorial Glad Rags	Gladiatorial_Glad_Rags
+sspd4plunk	sspd4plunk	Other	St. Sneaky Pete's Day	St._Sneaky_Pete's_Day_Tattoo
+sspdfi5if	sspdfi5if	Other	St. Sneaky Pete's Day	St._Sneaky_Pete's_Day_Tattoo
+sspdfipp3	sspdfipp3	Other	St. Sneaky Pete's Day	St._Sneaky_Pete's_Day_Tattoo
+sspdpook2	sspdpook2	Other	St. Sneaky Pete's Day	St._Sneaky_Pete's_Day_Tattoo
+sspdtat1	sspdtat1	Other	St. Sneaky Pete's Day	St._Sneaky_Pete's_Day_Tattoo
+staintat	staintat	Outfit	Unblemished Uniform	Unblemished_Uniform
+startat	startat	Outfit	Star Garb	Star_Garb
+stehobotat	stehobotat	Outfit	Vile Vagrant Vestments	Vile_Vagrant_Vestments
+swordtat	swordtat	Outfit	8-Bit Finery	8-Bit_Finery
+tehclub	tehclub	Custom	Teh Club's custom tattoo (male)	Tattoos#Custom_Tattoos
+tehclub_f	tehclub_f	Custom	Teh Club's custom tattoo (female)	Tattoos#Custom_Tattoos
+tikidemon	tikidemon	Custom	Ak'gyxoth	Tattoos#Custom_Tattoos
+topitat	topitat	Outfit	Topiaria	Topiaria
+toweltat	toweltat	Outfit	Terrycloth Tackle	Terrycloth_Tackle
+toxictat	toxictat	Outfit	Toxic Togs	Toxic_Togs
+tropictat	tropictat	Outfit	Tropical Crimbo Duds	Tropical_Crimbo_Duds
+vol_tat	vol_tat	Outfit	Primitive Radio Duds	Primitive_Radio_Duds
+warfrattat	warfrattat	Outfit	Frat Warrior Fatigues	Frat_Warrior_Fatigues
+warhiptat	warhiptat	Outfit	War Hippy Fatigues	War_Hippy_Fatigues
+wdbraintat	wdbraintat	Outfit	Dinsey's Exoskeleton	Dinsey's_Exoskeleton
+wintat	wintat	Custom	KoL Con IV Assassin	Tattoos#Custom_Tattoos
+workouttat	workouttat	Outfit	Workoutfit	Workoutfit
+wreathtat	wreathtat	Outfit	Arboreal Raiment	Arboreal_Raiment
+wumpustat	wumpustat	Outfit	Wumpus-Hair Wardrobe	Wumpus-Hair_Wardrobe
+xiblaxtat	xiblaxtat	Outfit	Xiblaxian Stealth Suit	Xiblaxian_Stealth_Suit
+yogtat	yogtat	Outfit	Hateful Habiliment	Hateful_Habiliment
+zaptat	zaptat	Outfit	Crimbot Crimboutfit	Crimbot_Crimboutfit
+zompirtat	zompirtat	Outfit	Cursed Zombie Pirate Costume	Cursed_Zombie_Pirate_Costume
