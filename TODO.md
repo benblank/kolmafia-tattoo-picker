@@ -4,7 +4,6 @@ This document contains my thoughts on where I'd like to take this script in the 
 
 * filtering — JS needs to be able to parse / reorder tattoo blocks
 * random tattoo — Should be trivial in JS.
-* switch from regexes to xpaths — I didn't realize ASH had an xpath function.  Goodbye, regex "parsing"!
 
 ## Might happen
 
