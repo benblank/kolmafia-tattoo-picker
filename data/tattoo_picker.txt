@@ -1,4 +1,4 @@
-# sigil sigil type  label wiki_page
+# sigil	sigil	type	label	wiki_page
 aerotat	aerotat	Outfit	Aeroutfit	Aeroutfit
 animelftat	animelftat	Outfit	Animelf Apparel	Animelf_Apparel
 aol1	aol1	Other	Air Warriors of Loathing	A._W._O._L._Tattoo
@@ -32,9 +32,12 @@ asc6	asc6	Ascension	Ascension #6	Ascension
 asc7	asc7	Ascension	Ascension #7	Ascension
 asc8	asc8	Ascension	Ascension #8	Ascension
 asc9	asc9	Ascension	Ascension #9	Ascension
+
 baketat	baketat	Outfit	Bakelite Brigandine	Bakelite_Brigandine
 barreltat	barreltat	Outfit	Cooper's Couture	Cooper's_Couture
 batmantat	batmantat	Item	battoo kit	Battoo_kit
+bauxtat	bauxtat	Outfit	Bauxite Baubles	Bauxite_Baubles
+bbatttat	bbatttat	Item	Bastille Battalion tattoo kit	Bastille_Battalion_tattoo_kit
 
 # Apparently had a typo at one point?
 bearclawta	bearclawta	Outfit	Warbear Dress Armor	Warbear_Dress_Armor
@@ -50,6 +53,7 @@ brimtat	brimtat	Outfit	Blasphemous Bedizenment	Blasphemous_Bedizenment
 brogretat	brogretat	Outfit	Brogre Brouture	Brogre_Brouture
 bugbear	bugbear	Outfit	Bugbear Costume	Bugbear_Costume
 bunny	bunny	Custom	Your custom tattoo!	Tattoo#Custom_Tattoos
+c18tat	c18tat	Item	Crimbo tattoo kit	Crimbo_tattoo_kit
 canadiatat	canadiatat	Outfit	OK Lumberjack Outfit	OK_Lumberjack_Outfit
 class1	class1	Ascension	Seal Clubber	Seal_Clubber
 class11	class11	Ascension	Avatar of Boris	Avatar_of_Boris
@@ -138,11 +142,20 @@ elvtat	elvtat	Outfit	El Vibrato Relics	El_Vibrato_Relics
 emperortat	emperortat	Outfit	The Emperor's New Clothes	The_Emperor's_New_Clothes
 eternaltat	eternaltat	Item	eternal knot tattoo	Eternal_knot_tattoo
 fdkoltat	fdkoltat	Item	FDKOL tattoo	FDKOL_tattoo
+fibertat	fibertat	Outfit	Fiberglass Finery	Fiberglass_Finery
 foilheart	foilheart	Item	Alice's Army Foil tattoo	Alice's_Army_Foil_tattoo
+fpmtat	fpmtat	Outfit	Pyrotechnic Paper Paraphernalia	Pyrotechnic_Paper_Paraphernalia
 fratboy	fratboy	Outfit	Frat Boy Ensemble	Frat_Boy_Ensemble
+frtat	frtat	Item	FantasyRealm tattoo kit	FantasyRealm_tattoo_kit
+frtat1	frtat1	Outfit	FantasyRealm Warrior's Outfit	FantasyRealm_Warrior%27s_Outfit
+frtat2	frtat2	Outfit	FantasyRealm Wizard's Outfit	FantasyRealm_Wizard%27s_Outfit
+frtat3	frtat3	Outfit	FantasyRealm Thief's Outfit	FantasyRealm_Thief%27s_Outfit
+gabtat	gabtat	Outfit	Gabardine Guise	Gabardine_Guise
+genietat	genietat	Outfit	Genie Garments	Genie_Garments
 gingercitytat	gingercitytat	Other	Gingerbread City	Midnight_in_the_Industrial_Zone
 gingertat	gingertat	Outfit	Gingerbread Best	Gingerbread_Best
 gnaugatat	gnaugatat	Outfit	Gnauga Hides	Gnauga_Hides
+gtat	gtat	Item	gattoo	Gattoo
 halotat	halotat	Outfit	Crimborg Assault Armor	Crimborg_Assault_Armor
 haremgirl	haremgirl	Outfit	Knob Goblin Harem Girl Disguise	Knob_Goblin_Harem_Girl_Disguise
 hasc01	hasc01	Ascension	Hardcore Ascension #1	Hardcore
@@ -215,6 +228,7 @@ merkgtat	merkgtat	Outfit	Mer-kin Gladiatorial Gear	Mer-kin_Gladiatorial_Gear
 merkintat	merkintat	Outfit	Crappy Mer-kin Disguise	Crappy_Mer-kin_Disguise
 merkstat	merkstat	Outfit	Mer-kin Scholar's Vestments	Mer-kin_Scholar's_Vestments
 meteortat	meteortat	Outfit	Meteor Masquerade	Meteor_Masquerade
+mimetat	mimetat	Outfit	Miming Regalia	Miming_Regalia
 miner	miner	Outfit	Mining Gear	Mining_Gear
 minifigtat	minifigtat	Outfit	BRICKOfig Outfit	BRICKOfig_Outfit
 necbrotat	necbrotat	Outfit	Dark Bro's Vestments	Dark_Bro's_Vestments
@@ -228,6 +242,7 @@ orbisontat	orbisontat	Outfit	Roy Orbison Disguise	Roy_Orbison_Disguise
 oxy	oxy	Ascension	Oxygenarian	Oxygenarian
 palette	palette	Other	Pretentious Artist Quest	Pretentious_Artist_Quest
 palmtat	palmtat	Outfit	Palmist Paraphernalia	Palmist_Paraphernalia
+partytat	partytat	Item	Party Tattoo™ gift certificate	Party_Tattoo™_gift_certificate
 pigirontat	pigirontat	Outfit	Pork Elf Prizes	Pork_Elf_Prizes
 pirate	pirate	Outfit	Swashbuckling Getup	Swashbuckling_Getup
 planetat	planetat	Item	airplane tattoo	Airplane_tattoo
@@ -238,11 +253,13 @@ porctat	porctat	Outfit	Ceramic Suit	Ceramic_Suit
 potterytat	potterytat	Outfit	Smoked Pottery	Smoked_Pottery
 pressietat	pressietat	Outfit	Crimbo Duds	Crimbo_Duds
 protontat	protontat	Item	psychokinetic energy blob	Psychokinetic_energy_blob
+psychictat	psychictat	Outfit	Psychic Enpsemble	Psychic_Enpsemble
 rad_tat	rad_tat	Outfit	Pinata Provisions	Pinata_Provisions
 radiotat	radiotat	Outfit	Radio Free Regalia	Radio_Free_Regalia
 radminetat	radminetat	Outfit	High-Radiation Mining Gear	High-Radiation_Mining_Gear
 reapertat	reapertat	Outfit	Grimy Reaper's Vestments	Grimy_Reaper's_Vestments
 recyctat	recyctat	Outfit	Glad Bag Glad Rags	Glad_Bag_Glad_Rags
+reintat	reintat	Outfit	Cheerful Reindeer Suit	Cheerful_Reindeer_Suit
 revclass1	revclass1	Outfit	Legendary Regalia of the Seal Crusher	Legendary_Regalia_of_the_Seal_Crusher
 revclass2	revclass2	Outfit	Legendary Regalia of the Chelonian Overlord	Legendary_Regalia_of_the_Chelonian_Overlord
 revclass3	revclass3	Outfit	Legendary Regalia of the Pasta Master	Legendary_Regalia_of_the_Pasta_Master
@@ -284,6 +301,10 @@ toxictat	toxictat	Outfit	Toxic Togs	Toxic_Togs
 tropictat	tropictat	Outfit	Tropical Crimbo Duds	Tropical_Crimbo_Duds
 twitchtat	twitchtat	Item	Twitching Television Tattoo	Twitching_Television_Tattoo
 vol_tat	vol_tat	Outfit	Primitive Radio Duds	Primitive_Radio_Duds
+vwgovtat	vwgovtat	Outfit	Government-Issued Garb	Government-Issued_Garb
+vwmuttat	vwmuttat	Outfit	Mutant Parts Apparel	Mutant_Parts_Apparel
+vwslimetat	vwslimetat	Outfit	Slime Enslamble	Slime_Enslamble
+vwsnaketat	vwsnaketat	Outfit	Snakeskin Suit	Snakeskin_Suit
 walmarttat	walmarttat	Item	Wal-Mart tattoo kit	Wal-Mart_tattoo_kit
 warfrattat	warfrattat	Outfit	Frat Warrior Fatigues	Frat_Warrior_Fatigues
 warhiptat	warhiptat	Outfit	War Hippy Fatigues	War_Hippy_Fatigues

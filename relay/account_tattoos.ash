@@ -1,9 +1,20 @@
+boolean[string] ALPHA_CHARACTERS = $strings[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z];
+
+// KoLmafia's (HtmlCleaner's) XPath support is too poor to usefully replace these.
 string CURRENT_AFTER = "\.gif\" width=50 height=50><p>These are the tattoos you have unlocked:";
 string CURRENT_BEFORE = "Current Tattoo:<p><img src=\"https://s3.amazonaws.com/images.kingdomofloathing.com/otherimages/sigils/";
+
+boolean[string] DIGIT_CHARACTERS = $strings[0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// These characters are removed entirely and therefore are not section delimiters.
+// This gives us e.g. KNIGHTS-ARMAMENTS instead of KNIGHT-S-ARMAMENTS and helps
+// prevent trailing delimiters.
+string IGNORED_CHARACTERS = "[\"')]";
+
 string IMAGE_ROOT = "/images/otherimages/sigils/";
 int NATURAL_KEY_NUMBER_DIGITS = 4;
-string PWD_PATTERN = "<input type=hidden name=pwd value='(\\w+)'>";
-string TATTOO_REGEX = "<input type=radio name=newsigil value=\"(\\w+)\">";
+string PWD_PATH = "//input[@name=\"pwd\"]/@value";
+string SIGIL_PATH = "//input[@name=\"newsigil\"]/@value";
 string WIKI_ROOT = "http://kol.coldfront.net/thekolwiki/index.php";
 string WIKI_SEARCH = "?title=Special:Search&go=Go&search=";
 
@@ -68,16 +79,6 @@ void pad_digits(buffer key, int first_digit) {
     }
   }
 }
-
-// These are placed here rather than with the other constants because they'll never
-// need updated, so have been grouped with the code which uses them instead.
-boolean[string] ALPHA_CHARACTERS = $strings[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z];
-boolean[string] DIGIT_CHARACTERS = $strings[0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-// These characters are removed entirely and therefore are not section delimiters.
-// This gives us e.g. KNIGHTS-ARMAMENTS instead of KNIGHT-S-ARMAMENTS and helps
-// prevent trailing delimiters.
-string IGNORED_CHARACTERS = "[\"')]";
 
 string make_natural_sort_key(string value) {
   // HACK: This converts values into "natural" keys by assuming numerical sections
@@ -304,11 +305,7 @@ string get_footer(buffer source) {
 }
 
 string find_pwd(buffer source) {
-  matcher pwd = create_matcher(PWD_PATTERN, source);
-
-  pwd.find();
-
-  return pwd.group(1);
+  return xpath(source, PWD_PATH)[0];
 }
 
 tattoo find_current_tattoo(buffer source) {
@@ -341,11 +338,7 @@ tattoo[string] find_all_tattoos(buffer source) {
 
   int initial_count = tattoos.count();
 
-  string[int][int] matches = group_string(source, TATTOO_REGEX);
-
-  foreach match in matches {
-    string sigil = matches[match][1];
-
+  foreach _, sigil in xpath(source, SIGIL_PATH) {
     tattoos[sigil] = lookup_tattoo(sigil);
   }
 
