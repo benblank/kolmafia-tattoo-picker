@@ -26,6 +26,20 @@
   padding-left: 1em;
 }
 
+.filter {
+  float: left;
+  width: 33.333%;
+}
+
+.filter__input {
+  margin: 0;
+  padding: 0;
+}
+
+.filter__label {
+  font-size: .8em;
+}
+
 .tattoo {
   align-items: center;
   display: flex;

@@ -236,7 +236,16 @@ buffer render_form(string pwd) {
 }
 
 buffer render_current_tattoo(tattoo current) {
-  return render_bluebox("Current Tattoo", render_tattoo(current, false), false);
+  buffer contents;
+
+  contents.append("<label class=filter>");
+  contents.append("<span class=filter__label>Filter: </span>");
+  contents.append("<input class=filter__input id=filter></input>");
+  contents.append("</label>");
+
+  contents.append(render_tattoo(current, false));
+
+  return render_bluebox("Current Tattoo", contents, false);
 }
 
 buffer render_section(string type, tattoo[int] tattoos) {
