@@ -164,67 +164,62 @@ string make_natural_sort_key(string value) {
 }
 
 buffer render_tattoo(tattoo tattoo, boolean button) {
-  buffer table;
+  buffer div;
 
-  table.append("<table>");
-  table.append("<tr>");
+  div.append("<div class=tattoo>");
 
   if (button) {
-    table.append("<td valign=center>");
-    table.append("<button class=\"button tattoo-select\" data-sigil=" + tattoo.sigil + ">Select</button>");
-    table.append("</td>");
+    div.append("<button class=\"button tattoo__select\" data-sigil=" + tattoo.sigil + ">Select</button>");
+    div.append(" ");
   }
 
-  table.append("<td><img height=\"50\" width=\"50\" src=\"");
-  table.append(IMAGE_ROOT);
-  table.append(tattoo.sigil);
-  table.append(".gif\" alt=\"");
-  table.append(tattoo.sigil);
-  table.append("\" title=\"");
-  table.append(tattoo.sigil);
-  table.append("\"></td><td><a target=\"_blank\" href=\"");
-  table.append(WIKI_ROOT);
-  table.append("/");
-  table.append(tattoo.wiki_page);
-  table.append("\">");
-  table.append(tattoo.label);
-  table.append("</a></td></tr>");
-  table.append("</table>");
+  div.append("<img class=\"tattoo__sigil\" src=\"");
+  div.append(IMAGE_ROOT);
+  div.append(tattoo.sigil);
+  div.append(".gif\" alt=\"");
+  div.append(tattoo.sigil);
+  div.append("\" title=\"");
+  div.append(tattoo.sigil);
+  div.append("\"> <a target=\"_blank\" href=\"");
+  div.append(WIKI_ROOT);
+  div.append("/");
+  div.append(tattoo.wiki_page);
+  div.append("\">");
+  div.append(tattoo.label);
+  div.append("</a>");
+  div.append("</div>");
 
-  return table;
+  return div;
 }
 
-buffer render_bluebox(string title, buffer content, boolean collapsible) {
+buffer render_bluebox(string title, buffer content, boolean is_category) {
   buffer bluebox;
 
-  bluebox.append("<table");
+  bluebox.append("<div class=\"bluebox");
 
-  if (collapsible) {
-    bluebox.append(" class=bluebox-collapsible");
+  if (is_category) {
+    bluebox.append(" bluebox--collapsible bluebox--category");
   }
 
-  bluebox.append(" width=95% cellspacing=0 cellpadding=0>");
-  bluebox.append("<tr><td style=\"color: white;");
+  bluebox.append("\">");
 
-  if (collapsible) {
-    bluebox.append(" cursor: pointer;");
+  bluebox.append("<div class=\"bluebox__title");
+
+  if (is_category) {
+    bluebox.append(" bluebox__title--collapsible");
   }
 
-  bluebox.append("\" align=center bgcolor=blue><b>");
-  bluebox.append(title + ":");
+  bluebox.append("\">" + title + ":");
 
-  if (collapsible) {
-    bluebox.append(" <span style=\"display: none; font-size: .8em; padding-left: 1em;\">");
-    bluebox.append("(click to open)");
-    bluebox.append("</span>");
+  if (is_category) {
+    bluebox.append(" <span class=\"bluebox__title--expando\">(click to open)</span>");
   }
 
-  bluebox.append("</b></td></tr>");
-  bluebox.append("<tr><td style=\"padding: 5px; border: 1px solid blue;\"><center>");
+  bluebox.append("</div>");
+  bluebox.append("<div class=\"bluebox__contents\">");
   bluebox.append(content);
-  bluebox.append("</center></td></tr>");
-  bluebox.append("</tr><tr><td height=4></td></tr>");
-  bluebox.append("</table>");
+  bluebox.append("</div>");
+  bluebox.append("</div>");
 
   return bluebox;
 }
@@ -241,7 +236,16 @@ buffer render_form(string pwd) {
 }
 
 buffer render_current_tattoo(tattoo current) {
-  return render_bluebox("Current Tattoo", render_tattoo(current, false), false);
+  buffer contents;
+
+  contents.append("<label class=filter>");
+  contents.append("<span class=filter__label>Filter: </span>");
+  contents.append("<input class=filter__input id=filter></input>");
+  contents.append("</label>");
+
+  contents.append(render_tattoo(current, false));
+
+  return render_bluebox("Current Tattoo", contents, false);
 }
 
 buffer render_section(string type, tattoo[int] tattoos) {
@@ -253,17 +257,7 @@ buffer render_section(string type, tattoo[int] tattoos) {
     if (type == "Unknown" && !(TATTOO_TYPES contains tattoos[index].type)) {
       // TODO: Handle inavlid type.
     } else if (type == tattoos[index].type) {
-      if (i % 3 == 0) {
-        section.append("<tr>");
-      }
-
-      section.append("<td>");
       section.append(render_tattoo(tattoos[index], true));
-      section.append("</td>");
-
-      if (i++ % 3 == 2) {
-        section.append("</tr>");
-      }
     }
   }
 
@@ -271,9 +265,6 @@ buffer render_section(string type, tattoo[int] tattoos) {
     // Empty buffer; no contents, no bluebox.
     return section;
   }
-
-  section.insert(0, "<table width=100%>");
-  section.append("</table>");
 
   return render_bluebox(type + " Tattoos", section, true);
 }
@@ -297,7 +288,10 @@ buffer render_sections(tattoo[string] tattoos) {
 }
 
 string get_header(buffer source) {
-  return source.substring(0, source.index_of("<body>") + 6);
+  string original_header = source.substring(0, source.index_of("<body>"));
+  string css = "<link rel=stylesheet href=\"tattoo_picker.css\">";
+  string js = "<script src=\"tattoo_picker.js\"></script>";
+  return original_header + css + js + '<body>';
 }
 
 string get_footer(buffer source) {
@@ -357,12 +351,9 @@ buffer generate_page(buffer source) {
   buffer page;
 
   page.append(get_header(source));
-  page.append("<center>");
   page.append(render_form(find_pwd(source)));
   page.append(render_current_tattoo(find_current_tattoo(source)));
   page.append(render_sections(find_all_tattoos(source)));
-  page.append("</center>");
-  page.append("<script src=\"tattoo_picker.js\"></script>");
   page.append(get_footer(source));
 
   return page;
