@@ -4,7 +4,6 @@ This document contains my thoughts on where I'd like to take this script in the 
 
 * filtering — JS needs to be able to parse / reorder tattoo blocks
 * random tattoo — Should be trivial in JS.
-* switch to CSS — I tried to keep the HTML as similar as possible to KoL, but I just can't do it anymore.  I need real CSS.
 * add README/FAQ — Time to start documenting this thing.
 
 ## Might happen

@@ -192,37 +192,34 @@ buffer render_tattoo(tattoo tattoo, boolean button) {
   return div;
 }
 
-buffer render_bluebox(string title, buffer content, boolean collapsible) {
+buffer render_bluebox(string title, buffer content, boolean is_category) {
   buffer bluebox;
 
-  bluebox.append("<table");
+  bluebox.append("<div class=\"bluebox");
 
-  if (collapsible) {
-    bluebox.append(" class=bluebox-collapsible");
+  if (is_category) {
+    bluebox.append(" bluebox--collapsible bluebox--category");
   }
 
-  bluebox.append(" width=95% cellspacing=0 cellpadding=0>");
-  bluebox.append("<tr><td style=\"color: white;");
+  bluebox.append("\">");
 
-  if (collapsible) {
-    bluebox.append(" cursor: pointer;");
+  bluebox.append("<div class=\"bluebox__title");
+
+  if (is_category) {
+    bluebox.append(" bluebox__title--collapsible");
   }
 
-  bluebox.append("\" align=center bgcolor=blue><b>");
-  bluebox.append(title + ":");
+  bluebox.append("\">" + title + ":");
 
-  if (collapsible) {
-    bluebox.append(" <span style=\"display: none; font-size: .8em; padding-left: 1em;\">");
-    bluebox.append("(click to open)");
-    bluebox.append("</span>");
+  if (is_category) {
+    bluebox.append(" <span class=\"bluebox__title--expando\">(click to open)</span>");
   }
 
-  bluebox.append("</b></td></tr>");
-  bluebox.append("<tr><td style=\"padding: 5px; border: 1px solid blue;\"><center>");
+  bluebox.append("</div>");
+  bluebox.append("<div class=\"bluebox__contents\">");
   bluebox.append(content);
-  bluebox.append("</center></td></tr>");
-  bluebox.append("</tr><tr><td height=4></td></tr>");
-  bluebox.append("</table>");
+  bluebox.append("</div>");
+  bluebox.append("</div>");
 
   return bluebox;
 }
@@ -345,11 +342,9 @@ buffer generate_page(buffer source) {
   buffer page;
 
   page.append(get_header(source));
-  page.append("<center>");
   page.append(render_form(find_pwd(source)));
   page.append(render_current_tattoo(find_current_tattoo(source)));
   page.append(render_sections(find_all_tattoos(source)));
-  page.append("</center>");
   page.append(get_footer(source));
 
   return page;

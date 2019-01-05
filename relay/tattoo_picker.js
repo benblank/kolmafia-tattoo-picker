@@ -1,9 +1,9 @@
 $(function() {
-  $("table.bluebox-collapsible tr:first-child td:first-child").click(function(event) {
-    var $td = $(event.currentTarget);
+  $(".bluebox__title--collapsible").click(function(event) {
+    var $title = $(event.currentTarget);
 
-    $td.find("span").toggle();
-    $td.closest("tr").next().find("center:eq(0)").toggle();
+    $title.find(".bluebox__expando").toggle();
+    $title.next().toggle();
   });
 
   $(".tattoo__select").click(function(event) {

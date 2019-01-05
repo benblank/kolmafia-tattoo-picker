@@ -1,3 +1,31 @@
+.bluebox {
+  margin: 4px auto;
+  text-align: center;
+  width: 95%;
+}
+
+.bluebox__contents {
+  border: 1px solid blue;
+  overflow: auto;
+  padding: 5px;
+}
+
+.bluebox__title {
+  background: blue;
+  color: white;
+  font-weight: bold;
+}
+
+.bluebox__title--collapsible {
+  cursor: pointer;
+}
+
+.bluebox__expando {
+  display: none;
+  font-size: .8em;
+  padding-left: 1em;
+}
+
 .tattoo {
   align-items: center;
   display: flex;
