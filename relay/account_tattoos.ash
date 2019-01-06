@@ -238,10 +238,18 @@ buffer render_form(string pwd) {
 buffer render_current_tattoo(tattoo current) {
   buffer contents;
 
+  contents.append("<div class=formleft>");
+
   contents.append("<label class=filter>");
   contents.append("<span class=filter__label>Filter: </span>");
   contents.append("<input class=filter__input id=filter></input>");
   contents.append("</label>");
+
+  contents.append("<br>");
+
+  contents.append("<button class=button id=randomize>Select Random Tattoo</button>");
+
+  contents.append("</div>");
 
   contents.append(render_tattoo(current, false));
 

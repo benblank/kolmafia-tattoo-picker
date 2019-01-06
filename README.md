@@ -6,6 +6,7 @@ This script replaces the default tatto selection page with something a little mo
 * displays tattoo source (e.g. outfit, item, ascension, …)
 * sources linked to relevant pages on TheKolWiki
 * filter based on source or "sigil" name (e.g. "Crimbo tattoo kit" or "c18tat")
+* random tattoo selection
 
 ## Installation
 

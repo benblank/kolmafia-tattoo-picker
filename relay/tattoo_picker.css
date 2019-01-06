@@ -27,8 +27,8 @@
 }
 
 .filter {
-  float: left;
-  width: 33.333%;
+  display: inline-block;
+  margin-bottom: 4px;
 }
 
 .filter__input {
@@ -38,6 +38,11 @@
 
 .filter__label {
   font-size: .8em;
+}
+
+.formleft {
+  float: left;
+  width: 33.333%;
 }
 
 .tattoo {

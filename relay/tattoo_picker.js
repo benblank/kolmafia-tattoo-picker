@@ -39,6 +39,14 @@ $(function() {
     });
   });
 
+  $("#randomize").click(function(event) {
+    var $tattoos = $(".tattoo").find("button");
+
+    if ($tattoos.length) {
+      $tattoos[Math.floor(Math.random() * $tattoos.length)].click();
+    }
+  });
+
   $(".tattoo__select").click(function(event) {
     // .data() doesn't seem to be hooked up to data- attributes in KoL's version of jQuery.
     $("#tattoo-selected").val($(event.target).attr("data-sigil"));

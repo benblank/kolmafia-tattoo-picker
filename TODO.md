@@ -2,7 +2,7 @@ This document contains my thoughts on where I'd like to take this script in the 
 
 ## Certain to happen
 
-* random tattoo — Should be trivial in JS.
+* all done, for now!
 
 ## Might happen
 
