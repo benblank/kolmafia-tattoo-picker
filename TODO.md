@@ -3,7 +3,6 @@ This document contains my thoughts on where I'd like to take this script in the 
 ## Certain to happen
 
 * random tattoo — Should be trivial in JS.
-* add README/FAQ — Time to start documenting this thing.
 
 ## Might happen
 
