@@ -19,12 +19,18 @@ $(function() {
         return;
       }
 
-      var sigilName = $button.attr("data-sigil").toLowerCase().slice(0, -3);
+      // Sigil names ignore trailing "tat" unless it's present in the filter.
+      var sigilName = $button.attr("data-sigil").toLowerCase();
 
-      if (sigilName.indexOf(filter) !== -1) {
+      if (sigilName.slice(-3) === "tat") {
+        sigilName = sigilName.slice(0, -3);
+      }
+
+      if (sigilName.indexOf(filter) !== -1 || filter.indexOf(sigilName) === 0) {
         matches = true;
       }
 
+      // Descriptions match if they contain the filter at all.
       if (!matches && $tattoo.find("a").text().toLowerCase().indexOf(filter) !== -1) {
         matches = true;
       }
