@@ -22,4 +22,4 @@ Whoops!  That means my database is out of date.  Feel free to [open an issue](ht
 
 ### I have a "Mystery" tattoo
 
-These are tattoos which I know exist, but have no other information about.  Currently, there's only opne of these — crimborgtat — and if you have information about how it was obtained, please let me know by [opening an issue](https://github.com/benblank/kolmafia-tattoo-picker/issues)!
+These are tattoos which I know exist, but have no other information about.  Currently, there's only one of these — crimborgtat — and if you have information about how it was obtained, please let me know by [opening an issue](https://github.com/benblank/kolmafia-tattoo-picker/issues)!
